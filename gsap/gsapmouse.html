@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            cursor: none;
+        }
+
+        .container .box {
+            border: 5px solid #000;
+            width: 500px;
+            height: 500px;
+            font-size: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container .cursor {
+            position: fixed;
+            bottom: 20px;
+            right: 80px;
+            width: 20px;
+            height: 20px;
+            background-color: #d1ed5d;
+            border-radius: 100%;
+            z-index: 50;
+            backface-visibility: hidden;
+            user-select: none;
+            pointer-events: none;
+            transition-property: background-color, width, height;
+            transition-duration: .3s;
+        }
+
+        .container .cursor.scale {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container .cursor.on {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 110px;
+            height: 110px;
+            background-color: transparent;
+            border: 2px solid #d1ed5d;
+        }
+
+        .container .cursor.on .pointer {
+            opacity: 0;
+        }
+
+        .container .cursor.on .view {
+            opacity: 1;
+            border-radius: 50%;
+        }
+
+        .container .cursor .pointer {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: 50%;
+            left: 50%;
+            fill: #fff;
+            transform: translate(-50%, -50%);
+        }
+
+        .container .cursor .view {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            opacity: 0;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="box box1">1</section>
+        <section class="box box2">2</section>
+        <section class="box box3">3</section>
+        <section class="box box4">4</section>
+        <section class="box box5">5</section>
+        <section class="box box6">6</section>
+        <section class="box box7">7</section>
+        <div class="cursor">
+            <div class="pointer"></div>
+            <span class="view">DISCOVER</span>
+        </div>
+    </main>
+    <script>
+        // 마우스 따라다니게
+        function mouseFollower(e) {
+            gsap.to('.cursor', 0.75, {
+                css: {
+                    left: e.clientX,
+                    top: e.clientY
+                }
+            })
+        }
+        document.addEventListener('mousemove', mouseFollower);
+
+        // box 호버 시 클래스 추가
+        $('.box').hover(function () {
+            $('.cursor').addClass('on scale')
+        }, function () {
+            $('.cursor').removeClass('on scale')
+        })
+
+        // 마우스 들어갔다 나왔다 할 때 pointer 추가
+        function mouseFollowerEvent() {
+            const boxList = document.querySelectorAll('.box');
+            const pointer = document.querySelector('.cursor .pointer');
+
+            boxList.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    pointer.classList.remove('pointer');
+                })
+                element.addEventListener('mouseleave', () => {
+                    pointer.classList.add('pointer');
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

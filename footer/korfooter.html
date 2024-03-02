@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .blind {
+            position: absolute;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .inner {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            background-color: #760023;
+            padding: 11px 0 10px;
+        }
+
+        .footer-top .list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-top .list .item {
+            display: inline-block;
+            padding: 0 22px;
+            line-height: 25px;
+        }
+
+        .footer-top .list .item a {
+            color: #ffffff94;
+            font-size: 15px;
+        }
+
+        .footer-top .list .item.white a {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer">
+        <h2 class="blind">고려대학교 푸터</h2>
+        <div class="footer-top">
+            <div class="inner">
+                <ul class="list">
+                    <li class="item"><a href="">대학정보공시</a></li>
+                    <li class="item"><a href="">정보공개</a></li>
+                    <li class="item white"><a href="">개인정보처리방침</a></li>
+                    <li class="item"><a href="">KU옴부즈</a></li>
+                    <li class="item"><a href="">캠퍼스안전</a></li>
+                    <li class="item"><a href="">교내주요연락처</a></li>
+                    <li class="item"><a href="">교내주요사이트</a></li>
+                    <li class="item"><a href="">사이트맵</a></li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .footer-bottom {
+                overflow: hidden;
+                background: #282828;
+            }
+
+            .footer-bottom .inner {
+                color: #b9b9b9;
+                padding: 62px 0 10px;
+            }
+
+            .footer-bottom .wrap {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .footer-bottom .logo-box {
+                color: #b9b9b9;
+                text-align: center;
+                width: 18%;
+                font-size: 14px;
+            }
+
+            .footer-bottom .logo-box .logo {
+                width: 87px;
+                height: 115px;
+                margin: 0 auto 25px;
+                text-indent: -5000px;
+                background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/footerLogo.png') center top no-repeat;
+            }
+
+            .footer-bottom .logo-box .text-box {}
+
+            .footer-bottom .logo-box .sns-list {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .footer-bottom .logo-box .sns-list [class*=sns-] {
+                display: inline-block;
+            }
+
+            .footer-bottom .logo-box .sns-list [class*=sns-] a {
+                display: block;
+                width: 25px;
+                height: 24px;
+                background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/footerSns.png') left top no-repeat;
+                text-indent: -5000px;
+                margin: 0 10px;
+            }
+
+            .footer-bottom .logo-box .sns-list .sns-insta a {
+                background-position: -94px top;
+            }
+
+            .footer-bottom .logo-box .sns-list .sns-youtube a {
+                background-position: -145px top;
+            }
+
+            .footer-bottom .logo-box .sns-list .sns-face a {
+                background-position: -48px top;
+            }
+
+            .footer-bottom .text-list {
+                width: 74%;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(2, 175px);
+                margin-right: -7.5%;
+            }
+
+            .footer-bottom .text-list .list li dl dt {
+                color: #f9f9f9;
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .footer-bottom .text-list .list li dl dd {
+                margin-bottom: 6px;
+            }
+
+            .footer-bottom .text-list .list li dl dd a {
+                color: #b9b9b9;
+                font-size: 15px;
+            }
+
+            .footer-bottom .copy {
+                max-width: 1200px;
+                margin: 0 auto;
+                clear: both;
+                color: #aeaeae;
+                font-size: 0.87em;
+                border-top: 1px solid #c5c5c5;
+                padding: 20px 0 60px;
+            }
+        </style>
+        <div class="footer-bottom">
+            <div class="inner">
+                <div class="wrap">
+                    <div class="logo-box">
+                        <h2 class="logo">
+                            <a href="">
+                                <span class="blind">고려대 푸터 로고</span>
+                            </a>
+                        </h2>
+                        <div class="text-box">
+                            <p>02841 서울특별시 성북구 안암로 145</p>
+                            <p>TEL.02.3290.1114.</p>
+                            <p>webmaster@korea.ac.kr</p>
+                        </div>
+                        <ul class="sns-list">
+                            <li class="sns-insta"><a href=""><span class="blind">인스타</span></a></li>
+                            <li class="sns-youtube"><a href=""><span class="blind">유튜브</span></a></li>
+                            <li class="sns-face"><a href=""><span class="blind">페이스북</span></a></li>
+                            <li class="sns-blog"><a href=""><span class="blind">블로그</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="text-list">
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <dl>
+                                    <dt>입학안내</dt>
+                                    <dd><a href="">학부</a></dd>
+                                    <dd><a href="">대학원</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy">
+                    <p>Copyright (C)2017 Korea University. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

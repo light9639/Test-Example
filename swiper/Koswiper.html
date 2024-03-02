@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .inner {
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            gap: 25px;
+            padding: 50px 0;
+        }
+
+        .col-left {
+            position: relative;
+            width: 791px;
+        }
+
+        .col-left .swiper {
+            height: 500px;
+            border-top: 5px solid #760023;
+            box-shadow: 1px 1px 5px #ddd;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .col-left .swiper-pagination {
+            position: absolute;
+            bottom: 25px;
+            right: 75px;
+            left: auto;
+            width: auto;
+        }
+
+        .col-left .swiper-pagination .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border: 2px solid #760023;
+            opacity: 1;
+            background: transparent;
+        }
+
+        .col-left .swiper-pagination .swiper-pagination-bullet-active {
+            background: #760023;
+        }
+
+        .col-left .wrap {
+            display: flex;
+            gap: 10px;
+        }
+
+        .col-left .wrap .border {
+            flex: 1;
+            overflow: hidden;
+            box-sizing: border-box;
+            border-top: 5px solid #760023;
+            box-shadow: 1px 1px 5px #ddd;
+            margin-bottom: 30px;
+            height: 200px;
+        }
+
+        .col-right {
+            width: 32%;
+            max-width: 380px;
+        }
+
+        .col-right .border {
+            overflow: hidden;
+            box-sizing: border-box;
+            border-top: 5px solid #760023;
+            box-shadow: 1px 1px 5px #ddd;
+            margin-bottom: 30px;
+            height: 300px;
+        }
+
+        .btn_pause {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .btn_pause>* {
+            transition: .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="col-left">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="btn_pause">
+                    <span>재생</span>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="first border">1</div>
+                <div class="second border">2</div>
+            </div>
+        </div>
+        <div class="col-right">
+            <div class="top border">1</div>
+            <div class="bottom border">2</div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000 //1초의 딜레이를 주고 자동 재생된다
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        var sw = 0;
+        $('.btn_pause').click(function () {
+            if (sw == 0) {
+                $('.btn_pause').addClass('on');
+                $('.btn_pause span').html('멈추기');
+                swiper.autoplay.stop();
+                sw = 1;
+            } else {
+                $('.btn_pause').removeClass('on');
+                $('.btn_pause span').html('재생');
+                swiper.autoplay.start();
+                sw = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

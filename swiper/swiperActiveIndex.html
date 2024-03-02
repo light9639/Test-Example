@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+
+        .swiper-container {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slide01 {
+            background: red;
+        }
+
+        .slide02 {
+            background: blue;
+        }
+
+        .slide03 {
+            background: yellow;
+        }
+
+        .slide04 {
+            background: pink;
+        }
+
+        .box-container {
+            width: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            font-size: 20px;
+        }
+
+        .box.active {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section_1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide01"></div>
+                <div class="swiper-slide slide02"></div>
+                <div class="swiper-slide slide03"></div>
+                <div class="swiper-slide slide04"></div>
+            </div>
+            <div class="swiper-navigation">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="box-container">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            speed: 500,
+            slidesPerView: 2,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+            on: {
+                slideChange: function () {
+                    $('.box').removeClass('active');
+                    $('.box').eq(this.realIndex).addClass('active');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

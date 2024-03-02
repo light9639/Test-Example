@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .aside {
+            position: absolute;
+            right: 0px;
+            top: 0;
+            z-index: 1005;
+            height: 380px;
+        }
+
+        .list {}
+
+        .list .item {}
+
+        .list .item .title {
+            width: 113px;
+            height: 76px;
+            padding-top: 38px;
+            border: none;
+            border-bottom: 1px solid rgba(49, 63, 90, 0.55);
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            color: #9397a7;
+            cursor: pointer;
+            background: rgba(28, 36, 70, 0.8) url("https://www.snu.ac.kr/webdata/uploads/kor/image/2019/12/header-visitgnb-freshman_lg.png") center bottom 37px/auto no-repeat;
+        }
+
+        .list .item:hover .title {
+            background: rgba(28, 36, 70) url("https://www.snu.ac.kr/webdata/uploads/kor/image/2019/12/header-visitgnb-freshman_lg.png") center bottom 37px/auto no-repeat;
+        }
+
+        .list .item:hover .sub {
+            display: block;
+        }
+
+        .list .item .sub {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 113px;
+            width: 200px;
+            height: 100%;
+            padding: 11px 20px;
+            background: #4c6492;
+        }
+
+        .list .item .sub .sub-item {}
+
+        .list .item .sub .sub-item a {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 30px;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aside">
+        <ul class="list">
+            <li class="item">
+                <button type="button" class="title">방문객</button>
+                <ul class="sub">
+                    <li class="sub-item"><a href="">SNU 캘린더</a></li>
+                    <li class="sub-item"><a href="">포털(마이스누)</a></li>
+                    <li class="sub-item"><a href="">스누식단</a></li>
+                    <li class="sub-item"><a href="">서울대 소식</a></li>
+                    <li class="sub-item"><a href="">학사일정</a></li>
+                    <li class="sub-item"><a href="">학사행정</a></li>
+                    <li class="sub-item"><a href="">SNU 미디어</a></li>
+                    <li class="sub-item"><a href="">학생활동</a></li>
+                    <li class="sub-item"><a href="">캠퍼스생활</a></li>
+                    <li class="sub-item"><a href="">학생지원서비스</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <button type="button" class="title">예비신입생</button>
+                <ul class="sub">
+                    <li class="sub-item"><a href="">입학안내</a></li>
+                    <li class="sub-item"><a href="">입학도우미</a></li>
+                    <li class="sub-item"><a href="">입학공지(대학)</a></li>
+                    <li class="sub-item"><a href="">입학공지(대학원)</a></li>
+                    <li class="sub-item"><a href="">입학 웹진 아로리</a></li>
+                    <li class="sub-item"><a href="">서울대 소식</a></li>
+                    <li class="sub-item"><a href="">SNU 캘린더</a></li>
+                    <li class="sub-item"><a href="">SNU 미디어</a></li>
+                    <li class="sub-item"><a href="">기념품몰</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <button type="button" class="title">교수 및 신입생</button>
+                <ul class="sub">
+                    <li class="sub-item"><a href="">SNU 캘린더</a></li>
+                    <li class="sub-item"><a href="">포털(마이스누)</a></li>
+                    <li class="sub-item"><a href="">스누식단</a></li>
+                    <li class="sub-item"><a href="">서울대 소식</a></li>
+                    <li class="sub-item"><a href="">학사일정</a></li>
+                    <li class="sub-item"><a href="">학사행정</a></li>
+                    <li class="sub-item"><a href="">SNU 미디어</a></li>
+                    <li class="sub-item"><a href="">학생활동</a></li>
+                    <li class="sub-item"><a href="">캠퍼스생활</a></li>
+                    <li class="sub-item"><a href="">학생지원서비스</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <button type="button" class="title">동문</button>
+                <ul class="sub">
+                    <li class="sub-item"><a href="">입학안내</a></li>
+                    <li class="sub-item"><a href="">입학도우미</a></li>
+                    <li class="sub-item"><a href="">입학공지(대학)</a></li>
+                    <li class="sub-item"><a href="">입학공지(대학원)</a></li>
+                    <li class="sub-item"><a href="">입학 웹진 아로리</a></li>
+                    <li class="sub-item"><a href="">서울대 소식</a></li>
+                    <li class="sub-item"><a href="">SNU 캘린더</a></li>
+                    <li class="sub-item"><a href="">SNU 미디어</a></li>
+                    <li class="sub-item"><a href="">기념품몰</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <button type="button" class="title">재학생</button>
+                <ul class="sub">
+                    <li class="sub-item"><a href="">SNU 캘린더</a></li>
+                    <li class="sub-item"><a href="">포털(마이스누)</a></li>
+                    <li class="sub-item"><a href="">스누식단</a></li>
+                    <li class="sub-item"><a href="">서울대 소식</a></li>
+                    <li class="sub-item"><a href="">학사일정</a></li>
+                    <li class="sub-item"><a href="">학사행정</a></li>
+                    <li class="sub-item"><a href="">SNU 미디어</a></li>
+                    <li class="sub-item"><a href="">학생활동</a></li>
+                    <li class="sub-item"><a href="">캠퍼스생활</a></li>
+                    <li class="sub-item"><a href="">학생지원서비스</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.querySelector('.list').addEventListener('mouseenter', function () {
+            document.querySelector('.aside').style.right = '200px'
+        })
+        document.querySelector('.list').addEventListener('mouseleave', function () {
+            document.querySelector('.aside').style.right = '0px'
+        })
+    </script>
+</body>
+
+</html>

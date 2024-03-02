@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .wrap {
+            border-width: 1px 0 0;
+            padding-top: 20px;
+            position: relative;
+            margin: 40px auto 0;
+            padding: 10px 0 8px;
+            text-align: center;
+            border-top: 1px solid #efeff0;
+            clear: both;
+        }
+
+        .inner .text {}
+
+        .inner .text .title {
+            position: relative;
+            margin-bottom: 9px;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .inner .text strong {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #030000;
+            letter-spacing: -0.85px;
+        }
+
+        .inner .text button.icon {
+            width: 15px;
+            height: 15px;
+            background-position: -394px -181px;
+            display: inline-block;
+            margin: 3px 0 0 6px;
+            border: 0;
+            vertical-align: top;
+            background-image: url(https://ssl.pstatic.net/static.news/image/news/m/2023/12/18/1/sp_n.png);
+            background-size: 409px 409px;
+            background-repeat: no-repeat;
+        }
+
+        .inner .text .help {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            box-sizing: border-box;
+            max-width: 330px;
+            border-radius: 4px;
+            border: 1px solid #eeeff5;
+            background: #fff;
+            margin: 3px auto 0;
+            padding: 14px 34px 12px 14px;
+            box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        .inner .text .help.on {
+            display: block;
+        }
+
+        .inner .text .help-desc {
+            font-size: 13px;
+            line-height: 18px;
+            color: #929294;
+            letter-spacing: -0.65px;
+            word-break: keep-all;
+            text-align: left;
+        }
+
+        .inner .text .help-close {
+            font-size: 1px;
+            line-height: initial;
+            color: rgba(1, 0, 0, 0);
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            box-sizing: content-box;
+            top: 11px;
+            right: 9px;
+            border: 0;
+            padding: 5px;
+        }
+
+        .inner .text .help-close::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 11.312px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -5.656px;
+            margin-left: -0.5px;
+            background-color: #ced0d6;
+            transform: rotate(45deg);
+            content: '';
+        }
+
+        .inner .text .help-close::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 11.312px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -5.656px;
+            margin-left: -0.5px;
+            background-color: #ced0d6;
+            transform: rotate(-45deg);
+            content: '';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="wrap">
+            <div class="text">
+                <div class="title">
+                    <strong>이 기사를 추천합니다</strong>
+                    <button class="icon">
+                        <span class="blind">열기 닫기</span>
+                    </button>
+                    <div class="help">
+                        <p class="help-desc">기사 추천은 24시간 내 50회까지 참여할 수 있습니다.</p>
+                        <button class="help-close"><span class="blind">닫기</span></button>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .list {
+                    max-width: 593px;
+                    margin: 0 auto;
+                    display: flex;
+                }
+
+                .list .item {
+                    flex: 1;
+                    padding-top: 59px;
+                    height: 45px;
+                    margin: 0 auto;
+                    position: relative;
+                }
+
+                .list .item .img-wrap a::before {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    content: '';
+                    background-image: url(https://ssl.pstatic.net/static.news/image/news/m/2022/05/02/sp_m_likeit_news.png);
+                    background-size: 199px 176px;
+                    background-position: 0px -92px;
+                    width: 40px;
+                    height: 40px;
+                    top: 11px;
+                }
+
+                .list .item:nth-child(1) .img-wrap a:before {
+                    background-position: 0px -92px;
+                }
+
+                .list .item:nth-child(2) .img-wrap a:before {
+                    background-position: -92px -46px;
+                }
+
+                .list .item:nth-child(3) .img-wrap a:before {
+                    background-position: -42px -92px;
+                }
+
+                .list .item:nth-child(4) .img-wrap a:before {
+                    background-position: -84px -92px;
+                }
+
+                .list .item:nth-child(5) .img-wrap a:before {
+                    background-position: -138px 0px;
+                }
+
+                .list .item .textbox {}
+
+                .list .item .textbox .text {
+                    display: block;
+                    overflow: visible;
+                    margin: 0 -7px 2px;
+                    font-size: 11px;
+                    font-weight: 500;
+                    color: #767678;
+                    color: #767678;
+                    line-height: 14px;
+                    letter-spacing: -0.7px;
+                    text-align: center;
+                }
+
+                .list .item .textbox .number {
+                    display: block;
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: 400;
+                    letter-spacing: -0.4px;
+                    color: #303038;
+                    line-height: 14px;
+                }
+            </style>
+            <ul class="list">
+                <li class="item">
+                    <div class="img-wrap">
+                        <a href="#">
+                            <span class="blind">쏠쏠정보</span>
+                        </a>
+                    </div>
+                    <div class="textbox">
+                        <span class="text">쏠쏠정보</span>
+                        <span class="number">43</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="img-wrap">
+                        <a href="#">
+                            <span class="blind">흥미진진</span>
+                        </a>
+                    </div>
+                    <div class="textbox">
+                        <span class="text">흥미진진</span>
+                        <span class="number">6</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="img-wrap">
+                        <a href="#">
+                            <span class="blind">공감백배</span>
+                        </a>
+                    </div>
+                    <div class="textbox">
+                        <span class="text">공감백배</span>
+                        <span class="number">7</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="img-wrap">
+                        <a href="#">
+                            <span class="blind">분석탁월</span>
+                        </a>
+                    </div>
+                    <div class="textbox">
+                        <span class="text">분석탁월</span>
+                        <span class="number">7</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="img-wrap">
+                        <a href="#">
+                            <span class="blind">후속강추</span>
+                        </a>
+                    </div>
+                    <div class="textbox">
+                        <span class="text">후속강추</span>
+                        <span class="number">18</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $('.text .icon').click(function () {
+            $('.title .help').toggleClass('on');
+        })
+        $('.help-close').click(function () {
+            $('.title .help').removeClass('on');
+        })
+    </script>
+</body>
+
+</html>

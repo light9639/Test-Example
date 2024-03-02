@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+    </script>
+    <style>
+        .wrapper {
+            width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .wrapper .inner {}
+
+        .wrapper .inner .headMenu {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+        }
+
+        .wrapper .inner .headMenu .title {
+            font-size: 18px;
+            line-height: 35px;
+            font-weight: bold;
+        }
+        
+
+        .wrapper .inner .headMenu .tab-menu {
+            width: auto;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 25px;
+            height: 35px;
+        }
+
+        .wrapper .inner .headMenu .tab-menu span {
+            position: relative;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 35px;
+        }
+
+        .wrapper .inner .headMenu .tab-menu span.on {
+            color: #d42018;
+            border-bottom: 2px solid #d42018;
+            font-weight: bold;
+        }
+
+        .wrapper .inner .headMenu .tab-menu span:first-child::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: -13px;
+            width: 1px;
+            height: 12px;
+            background-color: #ccc;
+        }
+
+        .wrapper .inner .tab-con {
+            display: flex;
+            width: 200%;
+            transform: translateX(0%);
+            transition: .3s;
+        }
+
+        .wrapper .inner .tab-con.on {
+            transform: translateX(-50%);
+        }
+
+        .wrapper .inner .tab-con [class*='tab-con-'] {
+            flex: 1;
+        }
+
+        .wrapper .inner .tab-con .wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            height: 60px;
+        }
+
+        .wrapper .inner .tab-con .wrap .number {
+            line-height: 40px;
+            margin-top: 0px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .wrapper .inner .tab-con .wrap .desc {
+            text-overflow: initial;
+            white-space: inherit;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            font-size: 14px;
+            overflow: hidden;
+            height: 40px;
+            padding: 0 20px 0 30px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="headMenu">
+                <h2 class="title">많이 본 기사</h2>
+                <div class="tab-menu">
+                    <span class="on" data-tab="country">지방</span>
+                    <span class="" data-tab="total">종합</span>
+                </div>
+            </div>
+            <div class="tab-con">
+                <div class="tab-con-first on" data-type="country">
+                    <div class="wrap">
+                        <span class="number">1</span>
+                        <p class="desc">거제해양관광개발공사, 2024년 ‘혁신 재도약’ 선포</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">2</span>
+                        <p class="desc">통영소방서에 전달된 미국인의 감사편지와 300달러</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">3</span>
+                        <p class="desc">로봇도시로 다시 뛰는 구미 '성장동력 확보 나선다'</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">4</span>
+                        <p class="desc">'사람이 없다' 60세 이상 68%…소멸 위기의 보은 회남면 [르포]</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">5</span>
+                        <p class="desc">제주, 가끔 구름 많아…낮 최고 9~12도</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">6</span>
+                        <p class="desc">새해 무역수지 적자로 시작, 반도체·승용차 수출은 '활기'</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">7</span>
+                        <p class="desc">부산, 대체로 맑은 날씨…낮 최고기온 11도</p>
+                    </div>
+                </div>
+                <div class="tab-con-second" data-type="total">
+                    <div class="wrap">
+                        <span class="number">1</span>
+                        <p class="desc">'불륜 발각' 女배우, 광고 위약금 18억 지불 거부…소속사와 갈등</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">2</span>
+                        <p class="desc">이혜정, 이혼 통보…남편 고민환 "내가 뭘 상처 줘? 잘못 싹 잊었다"</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">3</span>
+                        <p class="desc">"표적치료제 '이것', ROS1 돌연변이 폐암 치료효과 확인"</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">4</span>
+                        <p class="desc">'비트코인 현물 ETF' 시대 드디어 개막…뭐가 바뀔까</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">5</span>
+                        <p class="desc">오픈AI, 'GPT 스토어' 출시…"맞춤형 챗봇으로 수익 창출"</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">6</span>
+                        <p class="desc">12년차 경찰공무원이 받은 '퇴직금'은 얼마?</p>
+                    </div>
+                    <div class="wrap">
+                        <span class="number">7</span>
+                        <p class="desc">이준석 "한동훈, 윤에 할 말 안하면 제2황교안 된다…선 수도권 후 영남 공천 살육전" [인터뷰②]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.tab-menu span').click(function () {
+            tabName = $(this).data('tab');
+
+            $(this).addClass('on').siblings().removeClass('on')
+            if (tabName == 'total') {
+                $(`.tab-con`).addClass('on')
+            } else if (tabName == 'country') {
+                $(`.tab-con`).removeClass('on')
+            } else {
+                return
+            }
+        })
+    </script>
+</body>
+
+</html>

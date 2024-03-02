@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .marquee-wrapper {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .marquee-wrapper:hover .marquee-list {
+            animation-play-state: paused;
+        }
+
+        .marquee-list {
+            display: flex;
+            flex-shrink: 0;
+            animation: marquee 40s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .marquee-slide {
+            margin-left: 35px;
+        }
+
+        .img-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: auto;
+            height: auto;
+            max-width: none;
+            max-height: 550px;
+            overflow: hidden;
+        }
+
+        .img-wrap span {
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .75);
+            background-repeat: no-repeat;
+        }
+
+        .desc {
+            margin-top: 28px;
+            line-height: 28px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="marquee-wrapper">
+        <div class="marquee-list">
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_1.png"
+                        alt="서울 속 휴식 #청계천">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">서울 속 휴식 #청계천</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_2.png"
+                        alt="노을 지는 #경복궁 옆 해태상">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">노을 지는 #경복궁 옆 해태상</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_3.png"
+                        alt="어스름해지는 #창경궁">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">어스름해지는 #창경궁</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_4.png"
+                        alt="해질녘 #북촌마을에서 바라본 #N서울타워">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">해질녘 #북촌마을에서 바라본 #N서울타워</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_5.png"
+                        alt="봄빛 벚꽃 만발 #경복궁">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">봄빛 벚꽃 만발 #경복궁</p>
+            </a>
+        </div>
+        <div class="marquee-list">
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_1.png"
+                        alt="서울 속 휴식 #청계천">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">서울 속 휴식 #청계천</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_2.png"
+                        alt="노을 지는 #경복궁 옆 해태상">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">노을 지는 #경복궁 옆 해태상</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_3.png"
+                        alt="어스름해지는 #창경궁">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">어스름해지는 #창경궁</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_4.png"
+                        alt="해질녘 #북촌마을에서 바라본 #N서울타워">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">해질녘 #북촌마을에서 바라본 #N서울타워</p>
+            </a>
+            <a href="#" class="marquee-slide">
+                <div class="img-wrap">
+                    <img src="https://light9639.github.io/Mayplace/assets/images/main_aroundspot_listImage_5.png"
+                        alt="봄빛 벚꽃 만발 #경복궁">
+                    <span>CULTURE</span>
+                </div>
+                <p class="desc">봄빛 벚꽃 만발 #경복궁</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

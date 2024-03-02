@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 250px;
+            margin-top: 250px;
+        }
+
+        .container>* {
+            border: 5px solid #000;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="box1">1</section>
+        <section class="box2">2</section>
+        <section class="box3">3</section>
+        <section class="box4">4</section>
+        <section class="box5">5</section>
+        <section class="box6">6</section>
+        <section class="box7">7</section>
+        <section class="box8">8</section>
+    </main>
+    <script>
+        gsap.utils.toArray('.container > *').forEach(element => {
+            gsap.set(element, { opacity: 0, y: '250px' })
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "0% 100%",
+                    end: "100% 0%",
+                },
+                duration: 2,
+                opacity: 1,
+                y: 0,
+                ease: 'none'
+            })
+        })
+    </script>
+</body>
+
+</html>

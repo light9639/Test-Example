@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .fixed {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            background: #f00;
+            will-change: transform;
+            transition: .3s;
+        }
+
+        .fixed.on {
+            transform: translateX(0%);
+            transition: .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#void" class="btn1">열기</a>
+    <button type="button" class="btn2">열기</button>
+    <div class="fixed">
+        <button class="close">닫기</button>
+    </div>
+    <script>
+        $('.btn1').click(function (e) {
+            e.preventDefault();
+            $('.fixed').addClass('on');
+            $('body').addClass('hidden');
+        })
+        $('.btn2').click(function () {
+            $('.fixed').addClass('on');
+            $('body').addClass('hidden');
+        })
+        $('.close').click(function (e) {
+            $('.fixed').removeClass('on');
+            $('body').addClass('hidden');
+        })
+
+        $(document).click(function (e) {
+            if ($(this).has(e.target).length) {
+                $('body').addClass('hidden');
+                $('.menu').addClass('on');
+            }
+        })
+    </script>
+</body>
+
+</html>

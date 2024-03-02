@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 75px 0;
+            position: relative;
+        }
+
+        header.title {
+            position: relative;
+            max-width: 1300px;
+        }
+
+        header.title>span {
+            position: relative;
+            padding: 0 0 0 16px;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 20px;
+        }
+
+        header.title>span::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: #E63B53;
+        }
+
+        header.title h2 {
+            font-size: 30px;
+            line-height: 38px;
+            padding: 13px 0 0 0;
+            font-weight: 700;
+        }
+
+        .mini-img-box {
+            display: block;
+            margin: 0 0 15px;
+            height: 175px;
+        }
+
+        .mini-txt-box {
+            display: block;
+            text-align: center;
+        }
+
+        .mini-txt-box p {
+            padding: 0 0 5px;
+            font-weight: 400;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .mini-txt-box span {
+            display: block;
+            padding: 0 0 8px;
+            font-weight: 400;
+            font-size: 13px;
+            color: #999;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .swiper {
+            position: relative;
+            padding: 55px 0 0 0;
+        }
+
+        .swiper-pagination {
+            position: absolute !important;
+            top: auto !important;
+            left: auto !important;
+            right: 0 !important;
+            width: calc(100% - 267px) !important;
+            display: flex;
+        }
+
+        .swiper-pagination .swiper-pagination-bullet {
+            margin: 0 !important;
+            padding: 0;
+            width: 100%;
+            height: 5px;
+            background: #ebebeb !important;
+            opacity: 1 !important;
+            border-radius: 0;
+        }
+
+        .swiper-pagination .swiper-pagination-bullet-active {
+            margin: 0;
+            padding: 0;
+            height: 7px;
+            background: #e82f68 !important;
+            border-radius: 0;
+
+        }
+
+        .swiper-scrollbar-drag {}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <header class="title">
+                <span>이화여자대학교 배너모음</span>
+                <h2>EWHA Banner</h2>
+                <div class="swiper-pagination"></div>
+            </header>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" target="_blank" class="mini-img-box">
+                            <img src="https://www.ewha.ac.kr/_attach/image/2023/01/thumb_kBZwBoBZTQHhIwQIZKYn.jpg"
+                                alt="2023 Ewha Global Fellow">
+                        </a>
+                        <a href="#" target="_blank" class="mini-txt-box">
+                            <span>이화여자대학교</span>
+                            <p>2023 Ewha Global Fellow</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .footer {
+                background: #222d29;
+            }
+
+            .footer-top {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .footer-top .inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+            }
+
+            .footer-top .inner .list {
+                display: flex;
+                justify-content: space-between;
+                width: calc(100% - 68px);
+                padding-right: 80px;
+            }
+
+            .footer-top .inner .list .item.white a {
+                color: #fff;
+            }
+
+            .footer-top .inner .list .item a {
+                display: inline-block;
+                font-size: 15px;
+                color: #979499;
+                line-height: 23px;
+            }
+
+            .footer-top .inner .btn-scroll-top {
+                display: inline-block;
+                padding: 35px 16px 19px;
+                background: #E63B53 url(https://www.ewha.ac.kr/_res/ewha/img/common/img-scroll-top.png) no-repeat 50% 16px;
+                font-weight: 400;
+                font-size: 16px;
+                color: #fff;
+                vertical-align: middle;
+            }
+        </style>
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="inner">
+                    <ul class="list">
+                        <li class="item"><a href="">대학정보공시 </a></li>
+                        <li class="item"><a href="">정보공개 </a></li>
+                        <li class="item white"><a href="">개인정보처리방침 </a></li>
+                        <li class="item"><a href="">의료원 </a></li>
+                        <li class="item"><a href="">사이트맵 </a></li>
+                        <li class="item"><a href="">찾아오시는 길</a></li>
+                    </ul>
+                    <a href="#a" title="상단 이동" class="btn-scroll-top">TOP</a>
+                </div>
+            </div>
+            <style>
+                .footer-bottom {}
+
+                .footer-bottom .inner {
+                    display: flex;
+                    padding: 34px 0;
+                    justify-content: space-between;
+                }
+
+                .footer-bottom .inner .left-box {
+                    display: flex;
+                }
+
+                .footer-bottom .inner .left-box .text-box {
+                    display: table-cell;
+                    padding: 0 0 0 20px;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                }
+
+                .footer-bottom .inner .left-box .text-box .address {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #fff;
+                    line-height: 24px;
+                    padding-bottom: 5px;
+                }
+
+                .footer-bottom .inner .left-box .text-box .copy {
+                    font-size: 15px;
+                    color: #fff;
+                    line-height: 23px;
+                    opacity: 0.3;
+                }
+
+                .footer-bottom .inner .left-box .foot-logo {}
+
+                .footer-bottom .inner .left-box .foot-logo a {
+                    position: relative;
+                }
+
+                .footer-bottom .inner .left-box .foot-logo a::before {
+                    display: inline-block;
+                    content: '';
+                    width: 50px;
+                    height: 50px;
+                    background-image: url(https://www.ewha.ac.kr/_res/ewha/img/common/logo-footer.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                .footer-bottom .inner .right-box {
+                    display: flex;
+                }
+
+                .footer-bottom .inner .right-box ul {
+                    display: flex;
+                }
+
+                .footer-bottom .inner .right-box ul div {}
+
+                .footer-bottom .inner .right-box ul div .title {
+                    display: block;
+                    position: relative;
+                    z-index: 10;
+                    padding: 9px 30px 10px 20px;
+                    border: 1px solid #fff;
+                    background: url(https://www.ewha.ac.kr/_res/ewha/img/common/img-related-open.png) no-repeat right 15px top 50%;
+                    font-weight: 200;
+                    font-size: 14px;
+                    color: rgba(255, 255, 255, 0.5);
+                    box-sizing: border-box;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-wrap: normal;
+                    overflow: hidden;
+                }
+
+                .footer-bottom .inner .right-box div {
+                    display: inline-block;
+                    width: calc(100% - 43px);
+                    vertical-align: top;
+                }
+
+                .footer-bottom .inner .right-box .related-site {
+                    display: none;
+                    position: absolute;
+                    bottom: 33px;
+                    padding: 10px 0 30px;
+                    width: calc(100% - 2px);
+                    max-height: 200px;
+                    border: 1px solid #e7e7e7;
+                    background-color: #fff;
+                    overflow-y: scroll;
+                    box-sizing: border-box;
+                }
+
+                .footer-bottom .inner .right-box .related-site a {
+                    display: block;
+                    padding: 4px 20px;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+
+                .footer-bottom .inner .right-box .related-go {
+                    display: inline-block;
+                    margin: 0 0 0 -6px;
+                    padding: 10px 12px;
+                    background: #fff;
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: #1e2623;
+                }
+            </style>
+            <div class="footer-bottom">
+                <div class="inner">
+                    <div class="left-box">
+                        <div class="foot-logo">
+                            <a href="#">
+                                <span class="blind">푸터 로고</span>
+                            </a>
+                        </div>
+                        <div class="text-box">
+                            <p class="address">03760 서울특별시 서대문구 이화여대길 52 이화여자대학교T. 02-3277-2114</p>
+                            <p class="copy">COPYRIGHT 2020 BY EWHA WOMANS UNIVERSITY. ALL RIGHTS RESERVED.</p>
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <ul class="univer">
+                            <div>
+                                <a href="" class="title">대학 바로가기</a>
+                                <ul class="related-site">
+                                    <li><a href="http://liberal.ewha.ac.kr/" title="인문과학대학 홈페이지 새창이동"
+                                            target="_blank">인문과학대학</a></li>
+                                    <li><a href="http://apple.ewha.ac.kr/" title="사회과학대학 홈페이지 새창이동"
+                                            target="_blank">사회과학대학</a></li>
+                                    <li><a href="https://nature.ewha.ac.kr" title="자연과학대학 홈페이지 새창이동"
+                                            target="_blank">자연과학대학</a></li>
+                                    <li><a href="http://eng.ewha.ac.kr" title="엘텍공과대학 홈페이지 새창이동"
+                                            target="_blank">엘텍공과대학</a></li>
+                                    <li><a href="http://music.ewha.ac.kr" title="음악대학 홈페이지 새창이동"
+                                            target="_blank">음악대학</a></li>
+                                    <li><a href="http://artndesign.ewha.ac.kr" title="조형예술대학 홈페이지 새창이동"
+                                            target="_blank">조형예술대학</a></li>
+                                    <li><a href="http://teachers.ewha.ac.kr/" title="사범대학 홈페이지 새창이동"
+                                            target="_blank">사범대학</a></li>
+                                    <li><a href="http://biz.ewha.ac.kr" title="경영대학 홈페이지 새창이동" target="_blank">경영대학</a>
+                                    </li>
+                                    <li><a href="http://convergence.ewha.ac.kr/" title="신산업융합대학 홈페이지 새창이동"
+                                            target="_blank">신산업융합대학</a></li>
+                                    <li><a href="http://www.ewhamed.ac.kr " title="의과대학 홈페이지 새창이동">의과대학</a></li>
+                                    <li><a href="http://nursing.ewha.ac.kr " title="간호대학 홈페이지 새창이동">간호대학</a></li>
+                                    <li><a href="https://pharm21.ewha.ac.kr/" title="약학대학 홈페이지 새창이동"
+                                            target="_blank">약학대학</a></li>
+                                    <li><a href="http://scrantoncollege.ewha.ac.kr" title="스크랜튼대학 홈페이지 새창이동"
+                                            target="_blank">스크랜튼대학</a></li>
+                                    <li><a href="http://ai.ewha.ac.kr/ai/index.do" title="AI융합학부 홈페이지 새창이동"
+                                            target="_blank">인공지능대학</a></li>
+                                    <li><a href="http://hokma.ewha.ac.kr/" title="호크마교양대학 홈페이지 새창이동"
+                                            target="_blank">호크마교양대학</a></li>
+                                </ul>
+                            </div>
+                            <a href="#a" title="go" class="related-go">GO</a>
+                        </ul>
+                        <ul class="Graduate">
+                            <div>
+                                <a href="" class="title">대학원 바로가기</a>
+                                <ul class="related-site">
+                                    <li><a href="http://liberal.ewha.ac.kr/" title="인문과학대학 홈페이지 새창이동"
+                                            target="_blank">인문과학대학</a></li>
+                                    <li><a href="http://apple.ewha.ac.kr/" title="사회과학대학 홈페이지 새창이동"
+                                            target="_blank">사회과학대학</a></li>
+                                    <li><a href="https://nature.ewha.ac.kr" title="자연과학대학 홈페이지 새창이동"
+                                            target="_blank">자연과학대학</a></li>
+                                    <li><a href="http://eng.ewha.ac.kr" title="엘텍공과대학 홈페이지 새창이동"
+                                            target="_blank">엘텍공과대학</a></li>
+                                    <li><a href="http://music.ewha.ac.kr" title="음악대학 홈페이지 새창이동"
+                                            target="_blank">음악대학</a></li>
+                                    <li><a href="http://artndesign.ewha.ac.kr" title="조형예술대학 홈페이지 새창이동"
+                                            target="_blank">조형예술대학</a></li>
+                                    <li><a href="http://teachers.ewha.ac.kr/" title="사범대학 홈페이지 새창이동"
+                                            target="_blank">사범대학</a></li>
+                                    <li><a href="http://biz.ewha.ac.kr" title="경영대학 홈페이지 새창이동" target="_blank">경영대학</a>
+                                    </li>
+                                    <li><a href="http://convergence.ewha.ac.kr/" title="신산업융합대학 홈페이지 새창이동"
+                                            target="_blank">신산업융합대학</a></li>
+                                    <li><a href="http://www.ewhamed.ac.kr " title="의과대학 홈페이지 새창이동">의과대학</a></li>
+                                    <li><a href="http://nursing.ewha.ac.kr " title="간호대학 홈페이지 새창이동">간호대학</a></li>
+                                    <li><a href="https://pharm21.ewha.ac.kr/" title="약학대학 홈페이지 새창이동"
+                                            target="_blank">약학대학</a></li>
+                                    <li><a href="http://scrantoncollege.ewha.ac.kr" title="스크랜튼대학 홈페이지 새창이동"
+                                            target="_blank">스크랜튼대학</a></li>
+                                    <li><a href="http://ai.ewha.ac.kr/ai/index.do" title="AI융합학부 홈페이지 새창이동"
+                                            target="_blank">인공지능대학</a></li>
+                                    <li><a href="http://hokma.ewha.ac.kr/" title="호크마교양대학 홈페이지 새창이동"
+                                            target="_blank">호크마교양대학</a></li>
+                                </ul>
+                            </div>
+                            <a href="#a" title="go" class="related-go">GO</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var swiper = new Swiper(".swiper", {
+            slidesPerView: 4,
+            spaceBetween: 33,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .swiper-container {
+            position: relative;
+            width: 800px;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .swiper-wrapper {}
+
+        .swiper-slide {
+            width: 23.5%;
+            background: #000;
+            color: #fff;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">01</div>
+                <div class="swiper-slide">02</div>
+                <div class="swiper-slide">03</div>
+                <div class="swiper-slide">04</div>
+                <div class="swiper-slide">05</div>
+                <div class="swiper-slide">06</div>
+                <div class="swiper-slide">07</div>
+                <div class="swiper-slide">08</div>
+                <div class="swiper-slide">09</div>
+                <div class="swiper-slide">10</div>
+                <div class="swiper-slide">11</div>
+                <div class="swiper-slide">12</div>
+            </div>
+            <style>
+                .btn {
+                    position: absolute;
+                    top: 104px;
+                    right: -10px;
+                    width: 34px;
+                    height: 34px;
+                    background: #fff;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+                    border-radius: 50%;
+                    z-index: 100;
+                }
+
+                .btn::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                    background-size: 433px 412px;
+                    background-position: -179px -400px;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 12px;
+                    margin: auto;
+                }
+
+                .btn-prev {
+                    right: auto;
+                    left: 10px;
+                    transform: rotate(180deg);
+                }
+
+                .btn-next {
+                    right: 10px;
+                    left: auto;
+                }
+
+                .swiper-button-disabled {
+                    display: none;
+                }
+            </style>
+            <button class="btn btn-prev">
+                <span class="blind">이전</span>
+            </button>
+            <button class="btn btn-next">
+                <span class="blind">다음</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            speed: 750,
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            slidesPerGroup: 4,
+            navigation: {
+                nextEl: ".btn-next",
+                prevEl: ".btn-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .blind {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            clip: rect(0, 0, 0, 0);
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        .header-top {
+            background-color: #252525;
+        }
+
+        .header-top .inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top .text-list {
+            display: flex;
+        }
+
+        .header-top .text-list li {
+            line-height: 42px;
+
+        }
+
+        .header-top .text-list li:not(:last-child) {
+            background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/uServiceBar.gif') right center no-repeat;
+            padding-right: 8px;
+            margin-right: 8px;
+        }
+
+        .header-top .text-list li a {
+            color: #fff !important;
+            font-size: 13px;
+        }
+
+        .header-top .right-list {
+            display: flex;
+        }
+
+        .header-top .right-list .item {}
+
+        .header-top .right-list .item:not(:last-child) {
+            background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/uServiceBar.gif') right center no-repeat;
+            padding-right: 8px;
+            line-height: 43px;
+            margin-right: 8px;
+        }
+
+        .header-top .right-list .item a {
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .header-top .right-list .item #gSerch {
+            width: 43px;
+            height: 46px;
+            background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/gSerchBtn.png') left top no-repeat;
+            text-indent: -5000px;
+            outline: none;
+            border: none;
+        }
+
+        .header-top .right-list .item .gSerchDiv {
+            display: none;
+        }
+    </style>
+    <header>
+        <div class="header-top">
+            <div class="inner">
+                <ul class="text-list">
+                    <li><a href="">세종캠퍼스</a></li>
+                    <li><a href="">의료원</a></li>
+                    <li><a href="">KUPID</a></li>
+                    <li><a href="">발전기금</a></li>
+                    <li><a href="">교우회</a></li>
+                    <li><a href="">다양성위원회</a></li>
+                </ul>
+                <ul class="right-list">
+                    <li class="item"><a href="">Group Service</a></li>
+                    <li class="item"><a href="">로그인</a></li>
+                    <li class="item"><a href="">ENG</a></li>
+                    <li class="item">
+                        <button type="button" id="gSerch"><span class="blind">검색창 열기</span></button>
+                        <div class="gSerchDiv">
+                            <form method="post" name="searchFrm" action="/search/search.jsp">
+                                <label for="searchH" class="labelH">검색어 입력</label>
+                                <input type="text" name="query" id="searchH" placeholder="검색어를 입력하세요.">
+                                <button type="button" id="searchGo" onclick="jf_sub();">go</button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .header-bottom {
+                position: relative;
+                height: 94px;
+                background-color: #fff;
+                z-index: 3000;
+            }
+
+            .header-bottom .inner {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .header-bottom .logo {
+                display: block;
+                max-width: 164px;
+                height: 94px;
+                background: url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/h1_logo_new.svg') left 28px no-repeat;
+                text-indent: -5000px;
+                margin-right: 40px;
+                width: 14%;
+                background-size: 100%;
+            }
+
+            .header-bottom .logo a {}
+
+            .header-bottom .list {
+                display: flex;
+                margin-top: 36px;
+                width: 81%;
+            }
+
+            .header-bottom .list .item {
+                padding: 0 3.3% 38px;
+
+            }
+
+            .header-bottom .list .item .title {
+                display: block;
+                color: #191919;
+                font-weight: bold;
+                font-size: 17.1px;
+            }
+
+            .header-bottom .list .item .subGnb {
+                display: none;
+                position: absolute;
+                top: 94px;
+                left: 0;
+                width: 100%;
+                height: 350px;
+                background: #fff url('https://www.korea.ac.kr/mbshome/mbs/university/images/main3/subGnb.png') center top no-repeat;
+                z-index: 100;
+                border-bottom: 2px solid #8d002a;
+                border-top: 1px solid #ededee;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .header-bottom .list .item .subGnb.on {
+                display: block;
+            }
+        </style>
+        <div class="header-bottom">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="">
+                        <span class="blind">고대 로고</span>
+                    </a>
+                </h1>
+                <ul class="list">
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">고대소개</a>
+                        <div class="subGnb">
+                            <div class="inner">
+                                <div class="subGnbTitle">
+                                    <h2>고대소식</h2>
+                                    <p>Korea University Since 1905</p>
+                                </div>
+                                <ul class="depth_2">
+                                    <li class="first"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론자료');">언론자료</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060701000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|보도자료');">보도자료</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060702000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|언론자료|바로잡습니다');">바로잡습니다</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="/cop/article/getArticlePage.do?siteId=university&amp;id=university_060800000000&amp;language=ko"
+                                            onclick="ga('send','event','GNB','click','고대소식|언론에서 본 고대');">언론에서 본 고대</a>
+                                    </li>
+                                    <li><a href="#this" onclick="ga('send','event','GNB','click','고대소식|고대뉴스');">고대뉴스</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060109000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|전체뉴스');">전체뉴스</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060101000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|교육');">교육</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060108000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|연구');">연구</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060102000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|일반');">일반</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060110000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|국제');">국제</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview2.jsp?id=university_060103000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|행사·이벤트');">행사·이벤트</a>
+                                                </li>
+                                                <li class="last"><a
+                                                        href="/mbshome/mbs/university/subview2.jsp?id=university_060104000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대뉴스|발전기금');">발전기금</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|고대미디어');">고대미디어</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060301000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|KU 인사이트');">KU
+                                                        인사이트</a></li>
+                                                <li><a href="https://www.youtube.com/c/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%901905/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Youtube');">Youtube</a>
+                                                </li>
+                                                <li><a href="https://www.instagram.com/koreauniv.official/"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Instagram');">Instagram</a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/ku1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Facebook');">Facebook</a>
+                                                </li>
+                                                <li><a href="https://blog.naver.com/ku_1905" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Blog');">Blog</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060302000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|간행물');">간행물</a>
+                                                </li>
+                                                <li class="last"><a href="https://photo.korea.ac.kr" target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|고대미디어|Photo KU');">Photo
+                                                        KU</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="#this"
+                                            onclick="ga('send','event','GNB','click','고대소식|공지');">공지사항</a>
+                                        <div class="depth_3">
+                                            <ul>
+                                                <li class="first"><a
+                                                        href="/mbshome/mbs/university/subview.jsp?id=university_060201000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|일반공지');">일반공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060202000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|학사공지');">학사공지</a>
+                                                </li>
+                                                <li><a href="/mbshome/mbs/university/subview.jsp?id=university_060206000000"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|장학금공지');">장학금공지</a>
+                                                </li>
+                                                <li><a href="https://gms.korea.ac.kr:8051/recruit/index_staff.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|채용공고');">채용공고</a>
+                                                </li>
+                                                <li class="last"><a href="https://ten.korea.ac.kr/index.jsp"
+                                                        target="_blank"
+                                                        onclick="ga('send','event','GNB','click','고대소식|공지|구매입찰공고');">구매입찰공고</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="gnbClose">메뉴닫기</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .linkWrap {
+                height: 30px;
+                background-color: #760023;
+            }
+
+            .linkWrap .list {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .linkWrap .list .item {
+                display: inline-block;
+                line-height: 30px;
+                margin: 0 20px;
+            }
+
+            .linkWrap .list .item a {
+                color: #fff;
+            }
+        </style>
+        <div class="linkWrap">
+            <div class="inner">
+                <ul class="list">
+                    <li class="item"><a href="">KU Today</a></li>
+                    <li class="item"><a href="">연구성과</a></li>
+                    <li class="item"><a href="">주요행사</a></li>
+                    <li class="item"><a href="">KU미디어</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <script>
+        let list = document.querySelectorAll('.header-bottom .inner .list .item');
+
+        list.forEach(function (a, i) {
+            a.firstElementChild.addEventListener('click', function (e) {
+                e.preventDefault();
+                var sibling = a => [...a.parentElement.children].filter(e => e != a);
+                var siblings = sibling(a);
+                siblings.forEach(function (el) {
+                    el.lastElementChild.classList.remove('on')
+                })
+                this.nextElementSibling.classList.toggle('on')
+            })
+        })
+    </script>
+</body>
+
+</html>

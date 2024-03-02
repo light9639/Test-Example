@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            letter-spacing: -0.075em;
+        }
+
+        .tab-wrap {
+            width: 300px;
+            margin: 25px auto 0;
+        }
+
+        .main-title {
+            margin-bottom: 1rem;
+            font-family: 'Malgun Gothic', '돋움', 'dotum', "Helvetica Neue", Helvetica, Roboto, Arial, 'Apple SD Gothic Neo', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: -.05em;
+            line-height: 1;
+            color: #0292D5;
+        }
+
+        .tab-wrap .tab-menu {
+            display: flex;
+        }
+
+        .tab-wrap .tab-menu .title {
+            flex: 1;
+            color: #66676c;
+            background-color: #f6f6f6;
+            text-align: center;
+            display: block;
+            padding: .5rem .9375rem;
+            font-size: .8rem;
+            border: 1px solid rgba(0, 0, 0, .1);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom-color: transparent;
+        }
+
+        .tab-wrap .tab-menu .title.active {
+            color: #0292D5;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-wrap">
+        <h2 class="main-title">가장 많이 본 뉴스</h2>
+        <div class="tab-menu">
+            <div class="title active" data-tab=".first">오늘</div>
+            <div class="title" data-tab=".second">주간</div>
+            <div class="title" data-tab=".third">월간</div>
+        </div>
+        <style>
+            .tab-con {
+                padding: 1.25rem 0 0;
+                background-color: #fff;
+                border: 0;
+            }
+
+            .list {
+                display: none;
+            }
+
+            .list.active {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .list {}
+
+            .list a {
+                display: flex;
+                align-items: center;
+            }
+
+            .list a span.number {
+                overflow: hidden;
+                width: 22px;
+                line-height: 20px;
+                background-color: #0292D5;
+                border: 1px solid rgba(0, 0, 0, .1);
+                text-align: center;
+                color: #fff;
+                font-size: 12px;
+            }
+
+            .list a span.desc {
+                line-height: 1.375;
+                width: calc(100% - 22px);
+                padding-left: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .list a span.desc:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <div class="tab-con">
+            <ul class="list first active">
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">1</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">2</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">3</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">4</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">5</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">6</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">7</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">8</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">9</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">10</span>
+                        <span class="desc">[속보]이재명, 부산 가덕도서 목부위 흉기 찔려 긴급 이송 "피로 셔츠 젖을 정도"(2보)</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="list second">
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">1</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">2</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">3</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">4</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">5</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">6</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">7</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">8</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">9</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">10</span>
+                        <span class="desc">제네시스, G80 부분변경 모델 판매 돌입</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="list third">
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">1</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">2</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">3</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">4</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">5</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">6</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">7</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">8</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">9</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <span class="number">10</span>
+                        <span class="desc">[남도일보 등 5개社 제22대 총선 광주·전남 1차 여론조사]광주 동남을 선거구</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $('.tab-menu .title').hover(function () {
+            let tabName = $(this).data('tab');
+
+            $(this).addClass('active').siblings().removeClass('active')
+            $(tabName).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+</body>
+
+</html>

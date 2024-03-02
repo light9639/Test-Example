@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            height: 400vh;
+        }
+
+        .container .box {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s;
+        }
+
+        .box.on {
+            position: sticky;
+            top: 0;
+            width: 500px;
+            height: 500px;
+            border: 5px solid #000;
+            font-size: 80px;
+            text-align: center;
+            margin: 30px 10px;
+            transition: opacity 1s;
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="box box1">1</section>
+        <section class="box box2">2</section>
+        <section class="box box3">3</section>
+        <section class="box box4">4</section>
+    </main>
+    <script>
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.container',//객체기준범위
+                start: "0% 100%",
+                end: "100% 0%",
+                scrub: true,
+                onUpdate: self => {
+                    progress = self.progress.toFixed(4) * 100;
+                    if (progress >= 75) {
+                        $('.box:nth-child(4)').addClass('on').siblings().removeClass('on');
+                    }
+                    else if (progress >= 50) {
+                        $('.box:nth-child(3)').addClass('on').siblings().removeClass('on');
+                    } else if (progress >= 25) {
+                        $('.box:nth-child(2)').addClass('on').siblings().removeClass('on');
+                    } else {
+                        $('.box:nth-child(1)').addClass('on').siblings().removeClass('on');
+                    }
+                },
+                ease: 'none'
+            },
+        })
+    </script>
+</body>
+
+</html>

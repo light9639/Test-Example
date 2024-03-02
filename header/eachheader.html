@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .header {
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        .inner {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .header .list {
+            display: flex;
+            line-height: 50px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .header .list .item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header .list .item {}
+
+        .header .list .item:not(:last-child) {
+            border-right: 1px solid #ccc;
+        }
+
+        .header .list .item .title {
+            display: block;
+        }
+
+        .header .list .item .title.on {
+            background: blue;
+            color: #fff;
+        }
+
+        .sub {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            left: 0;
+            background: #000;
+        }
+
+        .sub .inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .sub .sub-item {}
+
+        .sub .sub-item a {
+            color: #fff;
+        }
+    </style>
+    <header class="header">
+        <div class="inner">
+            <ul class="list">
+                <li class="item">
+                    <a href="#void" class="title">menu1</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">nav1</a></li>
+                            <li class="sub-item"><a href="#void">nav2</a></li>
+                            <li class="sub-item"><a href="#void">nav3</a></li>
+                            <li class="sub-item"><a href="#void">nav4</a></li>
+                            <li class="sub-item"><a href="#void">nav5</a></li>
+                            <li class="sub-item"><a href="#void">nav6</a></li>
+                            <li class="sub-item"><a href="#void">nav7</a></li>
+                            <li class="sub-item"><a href="#void">nav8</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a href="#void" class="title">menu2</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">menu1</a></li>
+                            <li class="sub-item"><a href="#void">menu2</a></li>
+                            <li class="sub-item"><a href="#void">menu3</a></li>
+                            <li class="sub-item"><a href="#void">menu4</a></li>
+                            <li class="sub-item"><a href="#void">menu5</a></li>
+                            <li class="sub-item"><a href="#void">menu6</a></li>
+                            <li class="sub-item"><a href="#void">menu7</a></li>
+                            <li class="sub-item"><a href="#void">menu8</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a href="#void" class="title">menu3</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">dfdf1</a></li>
+                            <li class="sub-item"><a href="#void">dfdf2</a></li>
+                            <li class="sub-item"><a href="#void">dfdf3</a></li>
+                            <li class="sub-item"><a href="#void">dfdf4</a></li>
+                            <li class="sub-item"><a href="#void">dfdf5</a></li>
+                            <li class="sub-item"><a href="#void">dfdf6</a></li>
+                            <li class="sub-item"><a href="#void">dfdf7</a></li>
+                            <li class="sub-item"><a href="#void">dfdf8</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a href="#void" class="title">menu4</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">naddfdfv1</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv2</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv3</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv4</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv5</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv6</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv7</a></li>
+                            <li class="sub-item"><a href="#void">naddfdfv8</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a href="#void" class="title">menu5</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">odfde1</a></li>
+                            <li class="sub-item"><a href="#void">odfde2</a></li>
+                            <li class="sub-item"><a href="#void">odfde3</a></li>
+                            <li class="sub-item"><a href="#void">odfde4</a></li>
+                            <li class="sub-item"><a href="#void">odfde5</a></li>
+                            <li class="sub-item"><a href="#void">odfde6</a></li>
+                            <li class="sub-item"><a href="#void">odfde7</a></li>
+                            <li class="sub-item"><a href="#void">odfde8</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="item">
+                    <a href="#void" class="title">menu6</a>
+                    <ul class="sub">
+                        <div class="inner">
+                            <li class="sub-item"><a href="#void">qsdqf1</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf2</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf3</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf4</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf5</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf6</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf7</a></li>
+                            <li class="sub-item"><a href="#void">qsdqf8</a></li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        $('.title').click(function (e) {
+            e.preventDefault();
+            if ($(this).hasClass('on')) {
+                $('.title').removeClass('on').siblings('.sub').slideUp();
+            } else {
+                $('.title').removeClass('on').siblings('.sub').slideUp();
+                $(this).addClass('on').siblings('.sub').slideDown();
+            }
+        })
+    </script>
+</body>
+
+</html>

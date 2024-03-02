@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+        * {
+            font-family: 'NotoSansKR', 'NanumBarunGothicYetHangul';
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -.04em;
+            word-break: keep-all;
+        }
+
+        .footer {
+            background-color: #313131;
+        }
+
+        .inner {
+            padding: 55px 60px 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer">
+        <h2 class="blind">국립고궁 푸터</h2>
+        <div class="inner">
+            <style>
+                .footer-top {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .footer-top .text-box {
+                    margin-top: 20px;
+                }
+
+                .footer-top .text-box p {
+                    line-height: 1;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .footer-top .text-box p:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+
+                .footer-top .text-box p span {
+                    font-size: 16px;
+                    line-height: 1;
+                    display: flex;
+                    color: #999;
+                    align-items: center;
+                }
+
+                .footer-top .text-box p span:not(:first-child)::before {
+                    display: block;
+                    width: 1px;
+                    height: 13px;
+                    margin: 0 13px;
+                    content: '';
+                    background-color: #515151;
+                }
+            </style>
+            <div class="footer-top">
+                <div class="left">
+                    <div class="foot-logo">
+                        <a href="#">
+                            <img src="https://www.gogung.go.kr/resources/gogung/images/common/foot_logo2.png"
+                                alt="국립고궁 푸터 이미지">
+                        </a>
+                    </div>
+                    <div class="text-box">
+                        <p>
+                            <span>03045 서울특별시 종로구 효자로 12(세종로1-57)</span>
+                            <span>TEL.02-3701-7500</span>
+                        </p>
+                        <p>
+                            <span>Hyojaro 12, Jongno-gu, Seoul 03045</span>
+                            <span>TEL. 82-2-3701-7500</span>
+                        </p>
+                    </div>
+                </div>
+                <style>
+                    .footer-top .right {}
+
+                    .footer-top .right .list {}
+
+                    .footer-top .right .list .item {}
+
+                    .footer-top .right .list .item a {}
+
+                    .footer-top .right .right-bottom {}
+
+                    .footer-top .right .right-bottom .wa-img {}
+
+                    .footer-top .right .right-bottom .wa-img a {}
+
+                    .footer-top .right .right-bottom .wa-img a::before {}
+
+                    .footer-top .right .sns-list {}
+
+                    .footer-top .right .sns-list .item {}
+
+                    .footer-top .right .sns-list .item.facebook {}
+
+                    .footer-top .right .sns-list .item.twitter {}
+
+                    .footer-top .right .sns-list .item.instagram {}
+
+                    .footer-top .right .sns-list .item.youtube {}
+
+                    .footer-top .right .sns-list .item.blog {}
+
+                    .footer-top .right .foot-select,
+                    .footer-top .right .foot-select optgroup {
+                        font-size: 15px;
+                        font-weight: 300;
+                        line-height: 1;
+                        display: flex;
+                        width: 260px;
+                        height: 45px;
+                        margin-left: 50px;
+                        padding: 0 20px;
+                        color: #fff;
+                        border: 1px solid #3c3c3c;
+                        background: url('https://www.gogung.go.kr/resources/gogung/images/common/ico_selec_arrow.png') right 20px center no-repeat #252525;
+                        align-items: center;
+                    }
+                </style>
+                <div class="right">
+                    <ul class="list">
+                        <li class="item"><a href="#">민원신청</a></li>
+                        <li class="item"><a href="#">자주하는 질문</a></li>
+                        <li class="item"><a href="#">개인정보처리방침</a></li>
+                        <li class="item"><a href="#">저작권정책</a></li>
+                        <li class="item"><a href="#">이메일무단수집거부</a></li>
+                        <li class="item"><a href="#">성폭력 신고센터</a></li>
+                        <li class="item"><a href="#">경찰청 유실물 통합포털</a></li>
+                    </ul>
+                    <div class="right-bottom">
+                        <div class="wa-img">
+                            <a href="#">
+                                <span class="blind">wa 이미지</span>
+                            </a>
+                        </div>
+                        <ul class="sns-list">
+                            <li class="item facebook">
+                                <a href="#void">
+                                    <span class="blind">페이스북</span>
+                                </a>
+                            </li>
+                            <li class="item twitter">
+                                <a href="#void">
+                                    <span class="blind">트위터</span>
+                                </a>
+                            </li>
+                            <li class="item instagram">
+                                <a href="#void">
+                                    <span class="blind">인스타그램</span>
+                                </a>
+                            </li>
+                            <li class="item youtube">
+                                <a href="#void">
+                                    <span class="blind">유튜브</span>
+                                </a>
+                            </li>
+                            <li class="item blog">
+                                <a href="#void">
+                                    <span class="blind">블로그</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <select class="foot-select" title="관련기관 바로가기 새창열림">
+                            <option value="">관련기관 바로가기</option>
+                            <option value="http://www.cha.go.kr/">문화재청</option>
+                            <optgroup label="문화재청 소속기관">
+                                <option value="http://www.nuch.ac.kr">한국전통문화대학교</option>
+                                <option value="http://hcs.cha.go.kr">현충사관리소</option>
+                                <option value="http://sejong.cha.go.kr/">세종대왕유적관리소</option>
+                                <option value="http://700.cha.go.kr">칠백의총관리소</option>
+                                <option value="http://www.cha.go.kr/manin/ManinIndex.do">만인의총관리소</option>
+                                <option value="http://www.royalpalace.go.kr">경복궁관리소</option>
+                                <option value="http://www.cdg.go.kr/">창덕궁관리소</option>
+                                <option value="http://www.deoksugung.go.kr/">덕수궁관리소</option>
+                                <option value="http://cgg.cha.go.kr">창경궁관리소</option>
+                                <option value="http://jm.cha.go.kr">종묘관리소</option>
+                                <option value="http://royaltombs.cha.go.kr/">조선왕릉관리소</option>
+                                <option value="http://www.nihc.go.kr">국립무형유산원</option>
+                                <option value="http://www.nrich.go.kr">국립문화재연구원</option>
+                                <option value="http://www.seamuse.go.kr">국립해양문화재연구소</option>
+                                <option value="http://royal.cha.go.kr">궁능유적본부</option>
+                            </optgroup>
+                            <optgroup label="문화재청 산하기관">
+                                <option value="http://www.chf.or.kr/">한국문화재재단</option>
+                                <option value="https://www.overseaschf.or.kr">국외소재문화재재단</option>
+                                <option value="https://nationaltrustkorea.org/">문화유산국민신탁</option>
+                                <option value="https://www.unesco-ichcap.org/?lang=ko">유네스코아태무형유산센터</option>
+                                <option value="http://www.kofta.org/">전통건축수리기술진흥재단</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .footer-bottom {
+                    font-size: 13px;
+                    line-height: 1;
+                    display: block;
+                    color: #999;
+                    margin-top: 20px;
+                }
+
+                .footer-bottom::before {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    margin: 0 0 40px;
+                    content: '';
+                    background-color: #555;
+                }
+            </style>
+            <div class="footer-bottom">
+                <p>© 2022 NATIONAL PALACE MUSEUM OF KOREA. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+    </script>
+</body>
+
+</html>

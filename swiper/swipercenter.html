@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .mySwiper {
+            position: relative;
+            margin-top: 25px;
+        }
+
+        .mySwiper .btn {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            margin-top: -24px;
+            border-radius: 50%;
+            background-color: hsla(0, 0%, 100%, .9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+        }
+
+        .mySwiper .btn svg {
+            display: block;
+            width: 10px;
+            height: 18px;
+            margin: 0 auto;
+            color: #121212;
+        }
+
+        .mySwiper .btn-prev {
+            left: 50%;
+            margin-left: -400px;
+            transform: rotate(180deg);
+        }
+
+        .mySwiper .btn-next {
+            right: 50%;
+            margin-right: -400px;
+        }
+
+        .swiper-slide {
+            width: 960px;
+            height: 328px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://shop-phinf.pstatic.net/20231228_207/1703722389043RCY2c_JPEG/20231226_1EC9B94_LGECA084EC9E90EC8A88ED8DBCEB9FADED82A4EC.jpg?type=w1200"
+                    alt="">
+            </div>
+        </div>
+        <button class="btn btn-prev">
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" class="pagingButtonPc_icon__MF8Vz">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                    d="M1.5 16.5L9 9 1.5 1.5"></path>
+            </svg>
+            <span class="blind">이전</span>
+        </button>
+        <button class="btn btn-next">
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" class="pagingButtonPc_icon__MF8Vz">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                    d="M1.5 16.5L9 9 1.5 1.5"></path>
+            </svg>
+            <span class="blind">다음</span>
+        </button>
+        <style>
+            .pagination {
+                position: absolute;
+                right: 50%;
+                bottom: 24px;
+                z-index: 10;
+                margin-right: -304px;
+            }
+
+            .pagination .pagi-wrap {
+                display: flex;
+                align-items: center;
+            }
+
+            .pagination button {
+                width: 55px;
+                height: 32px;
+                position: relative;
+                border-radius: 16px 0 0 16px;
+                background-color: rgba(0, 0, 0, .2);
+                color: #fff;
+                vertical-align: top;
+                margin-top: -16px;
+            }
+
+            .pagination button svg {
+                width: 11px;
+                height: 14px;
+                margin: 9px 8px 9px 13px;
+            }
+
+            .pagination .swiper-pagination {
+                padding: 0 14px 0 8px;
+                font-size: 17px;
+                font-family: helvetica, sans-serif;
+                line-height: 32px;
+                display: inline-block;
+                position: relative;
+                margin-left: 1px;
+                border-radius: 0 16px 16px 0;
+                background-color: rgba(0, 0, 0, .2);
+                color: #fff;
+                vertical-align: top;
+            }
+        </style>
+        <div class="pagination">
+            <div class="pagi-wrap">
+                <button type="button" class="indexPlayButton_responsive_icon_area__Uo_AQ">
+                    <svg width="10" height="14" fill="none" viewBox="0 0 10 14"
+                        class="indexPlayButton_responsive_icon_pause__9fVx_">
+                        <rect width="2" height="14" x="0.5" fill="currentColor" rx="0.5"></rect>
+                        <rect width="2" height="14" x="7.5" fill="currentColor" rx="0.5"></rect>
+                    </svg>
+                    <span class="blind">자동 재생 정지</span>
+                </button>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".btn-next",
+                prevEl: ".btn-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                type: "fraction",
+            },
+            on: {
+                init: {
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

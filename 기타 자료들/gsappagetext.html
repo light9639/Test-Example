@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body {
+            background: #000;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 120rem;
+            padding-left: max(1.5rem, min(6.73139vw - 0.0776699rem, 8rem));
+            padding-right: max(1.5rem, min(6.73139vw - 0.0776699rem, 8rem));
+            padding-bottom: max(3rem, min(1.0356vw + 2.75728rem, 4rem));
+            padding-top: max(3rem, min(1.0356vw + 2.75728rem, 4rem));
+        }
+
+        .list .item {
+            grid-column: span 2;
+        }
+
+        .list .item .title {}
+
+        .list .item:nth-child(1) .title {
+            color: green;
+        }
+
+        .list .item:nth-child(2) .title {
+            color: yellow;
+        }
+
+        .list .item:nth-child(3) .title {
+            color: red;
+        }
+
+        .list .item:nth-child(4) .title {
+            color: rebeccapurple;
+        }
+
+        .list .item:nth-child(5) .title {
+            color: blue;
+        }
+
+        .list .item .sub {}
+
+        .list .item .sub .item {
+            margin-top: 0.625rem;
+            font-size: max(1.125rem, min(0.441176vw + 0.783088rem, 1.3125rem));
+            font-weight: 600;
+            line-height: 1.15;
+            color: #bbbaa6;
+        }
+
+        .list .item .sub .item a {}
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li class="item">
+            <a href="#void" class="title">GSAP</a>
+            <ul class="sub">
+                <li class="item"><a href="#void">Core</a></li>
+                <li class="item"><a href="#void">Docs</a></li>
+                <li class="item"><a href="#void">All Plugins</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#void" class="title">Scroll</a>
+            <ul class="sub">
+                <li class="item"><a href="#void">ScrollTrigger</a></li>
+                <li class="item"><a href="#void">ScrollSmoother</a></li>
+                <li class="item"><a href="#void">ScrollTo</a></li>
+                <li class="item"><a href="#void">Observer</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#void" class="title">SVG</a>
+            <ul class="sub">
+                <li class="item"><a href="#void">MorphSVG</a></li>
+                <li class="item"><a href="#void">DrawSVG</a></li>
+                <li class="item"><a href="#void">MotionPath</a></li>
+                <li class="item"><a href="#void">MotionPathHelper</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="" class="title">UI</a>
+            <ul class="sub">
+                <li class="item"><a href="#void">Flip</a></li>
+                <li class="item"><a href="#void">SplitText</a></li>
+                <li class="item"><a href="#void">Draggable</a></li>
+                <li class="item"><a href="#void">Inertia</a></li>
+                <li class="item"><a href="#void">Observer</a></li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="" class="title">Text</a>
+            <ul class="sub">
+                <li class="item"><a href="#void">SplitText</a></li>
+                <li class="item"><a href="#void">ScrambleText</a></li>
+                <li class="item"><a href="#void">Text</a></li>
+                <li class="item"><a href="#void"></a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

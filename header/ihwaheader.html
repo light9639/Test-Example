@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .inner {
+            margin: 0 auto;
+            max-width: 1300px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <style>
+            .top-ban {
+                background: #00664F;
+            }
+
+            .top-ban .inner {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .top-ban p {
+                padding: 14px 0;
+                font-size: 13.5px;
+                color: #a4b8af;
+                letter-spacing: 0.5px;
+            }
+
+            .top-ban .ban-list {
+                display: flex;
+            }
+
+            .top-ban .ban-list .ban-item {
+                padding: 13px 15px 13px 0;
+            }
+
+            .top-ban .ban-list .ban-item:first-child {
+                font-size: 14px;
+                color: #fff;
+                opacity: 0.5;
+                transition: opacity .3s;
+            }
+
+            .top-ban .ban-list .ban-item:not(:first-child) a {
+                content: '';
+                display: inline-block;
+                width: 17px;
+                height: 14px;
+                opacity: 0.5;
+                transition: opacity .3s;
+                background: url(https://www.ewha.ac.kr/_res/ewha/img/common/ico-instagram.png) no-repeat center center;
+            }
+
+            .top-ban .ban-list .ban-item.insta a {}
+
+            .top-ban .ban-list .ban-item.facebook a {}
+
+            .top-ban .ban-list .ban-item.twitter a {}
+
+            .top-ban .ban-list .ban-item.blog a {}
+
+            .top-ban .ban-list .ban-item.youtube a {}
+        </style>
+        <div class="top-ban">
+            <div class="inner">
+                <p>EWHA, THE FUTURE WE CREATE 이화포탈</p>
+                <ul class="ban-list">
+                    <li class="ban-item text"><a href="#">이화포탈</a></li>
+                    <li class="ban-item insta"><a href="#"><span class="blind">인스타그램</span></a></li>
+                    <li class="ban-item facebook"><a href="#"><span class="blind">페이스북</span></a></li>
+                    <li class="ban-item twitter"><a href="#"><span class="blind">트위터</span></a></li>
+                    <li class="ban-item blog"><a href="#"><span class="blind">블로그</span></a></li>
+                    <li class="ban-item youtube"><a href="#"><span class="blind">유튜브</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .header-middle {}
+
+            .header-middle .inner {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .header-middle .inner .search-wrap {
+                padding: 35px 0;
+            }
+
+            .header-middle .inner .search-wrap form {}
+
+            .header-middle .inner .search-wrap form fieldset {
+                border: none;
+            }
+
+            .header-middle .inner .search-wrap input {
+                padding: 11px 22px;
+                min-width: 284px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            .header-middle .inner .search-wrap button {
+                margin: 0 0 0 -4px;
+                width: 43px;
+                height: 43px;
+                background: url(https://www.ewha.ac.kr/_res/ewha/img/common/ico-search.png) no-repeat center center;
+                border: 1px solid #ccc;
+                border-left: 0;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+
+            .header-middle .inner .logo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .header-middle .inner .util-box {
+                display: flex;
+                padding: 45px 0 0 0;
+            }
+
+            .header-middle .inner .util-box>* {
+                display: block;
+                padding: 10px 25px 10px 0;
+                font-size: 15px;
+                color: #191919;
+            }
+
+            .header-middle .inner .util-box .login {
+                margin-right: 24px;
+                background: url(https://www.ewha.ac.kr/_res/ewha/img/common/ico-login.png) no-repeat right center;
+            }
+
+            .header-middle .inner .util-box .language {
+                padding-right: 30px;
+                background: url(https://www.ewha.ac.kr/_res/ewha/img/common/ico-lang.png) no-repeat right 2px center;
+            }
+        </style>
+        <div class="header-middle">
+            <div class="inner">
+                <div class="search-wrap">
+                    <form action="/ewha/search.do" name="totalSearch" method="get">
+                        <fieldset>
+                            <legend title="통합검색" class="blind">통합검색</legend>
+                            <label class="blind" for="sch-word">검색어 입력</label>
+                            <input type="text" id="sch-word" name="qt" placeholder="Search keywords">
+                            <button type="submit" value="검색" class="sch-btn"><span class="blind">검색</span></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="https://www.ewha.ac.kr/_res/ewha/img/common/img-logo.png" alt="이화여대 로고">
+                    </a>
+                </h1>
+                <div class="util-box">
+                    <a href="#" class="login">로그인</a>
+                    <a href="#" class="language">English</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .header-menu {
+                position: relative;
+                border-top: 1px solid #e1e1e1;
+                border-bottom: 2px solid #045738;
+            }
+
+            .header-menu .inner .list {
+                text-align: center;
+            }
+
+            .header-menu .inner .list .item {
+                display: inline-block;
+                margin: 0 -4px 0 0;
+                padding: 0 30px;
+            }
+
+            .header-menu .inner .list .item .title {
+                display: block;
+                position: relative;
+                padding: 36px 5px;
+                font-size: 18px;
+                color: #222;
+                font-weight: 500;
+            }
+
+            .header-menu .inner .list .item .sub {
+                display: none;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                z-index: 40;
+                padding: 45px 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        </style>
+        <div class="header-menu">
+            <div class="inner">
+                <ul class="list">
+                    <li class="item">
+                        <a href="" class="title">이화소개</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/intro/greetings.do">인사말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/profile01.do">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/activity.do">총장활동</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/dean.do">역대총장</a>
+                                    </li>
+                                </ul>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/academics/convergence.do">신산업융합대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/medicine.do">의과대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/nursing.do">간호대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/pharmacy.do">약학대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/scranton.do">스크랜튼대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/Al-Intelgence.do">인공지능대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/hokma.do">호크마교양대학</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-item">
+                                <a href="#" class="sub-title"></a>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/intro/greetings.do">인사말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/profile01.do">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/activity.do">총장활동</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/dean.do">역대총장</a>
+                                    </li>
+                                </ul>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/academics/convergence.do">신산업융합대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/medicine.do">의과대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/nursing.do">간호대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/pharmacy.do">약학대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/scranton.do">스크랜튼대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/Al-Intelgence.do">인공지능대학</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/academics/hokma.do">호크마교양대학</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/intro/greetings.do">인사말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/profile01.do">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/activity.do">총장활동</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/dean.do">역대총장</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/intro/greetings.do">인사말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/profile01.do">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/activity.do">총장활동</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/dean.do">역대총장</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-mn02">
+                                    <li>
+                                        <a href="/ewha/intro/greetings.do">인사말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/profile01.do">프로필</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/activity.do">총장활동</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ewha/intro/dean.do">역대총장</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">입학안내</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">대학·대학원</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">연구·산학</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">학사안내</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">대학생활</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a href="" class="title">뉴스센터</a>
+                        <ul class="sub">
+                            <li class="sub-item">
+                                <a href="" class="sub-title"></a>
+                                <ul class="sub-list">
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <script></script>
+</body>
+
+</html>

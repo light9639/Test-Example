@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab-menu {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab-menu .menu-list {
+            flex: 1;
+            background: #ccc;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .tab-menu .menu-list:not(:last-child) {
+            border-right: 1px solid #fff;
+        }
+
+        .tab-menu .menu-list.on {
+            background: #f00;
+        }
+
+        .tab-con {}
+
+        .tab-con div {
+            display: none;
+        }
+
+        .tab-con div.on {
+            display: block;
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-menu">
+        <div class="menu-list on" data-tab="#tab1">tab1</div>
+        <div class="menu-list" data-tab="#tab2">tab2</div>
+        <div class="menu-list" data-tab="#tab3">tab3</div>
+    </div>
+    <div class="tab-con">
+        <div id="tab1" class="on">11</div>
+        <div id="tab2">22</div>
+        <div id="tab3">33</div>
+    </div>
+    <script>
+        $('.menu-list').click(function () {
+            tabName = $(this).data('tab');
+            $(this).addClass('on').siblings().removeClass('on')
+            $(tabName).addClass('on').siblings().removeClass('on')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .swiper {
+            padding: 15px;
+        }
+
+        .swiper-slide {
+            height: 500px;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+            <div class="swiper-slide">7</div>
+            <div class="swiper-slide">8</div>
+            <div class="swiper-slide">9</div>
+            <div class="swiper-slide">9</div>
+            <div class="swiper-slide">9</div>
+            <div class="swiper-slide">9</div>
+            <div class="swiper-slide">9</div>
+            <div class="swiper-slide">9</div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        var swiper = new Swiper(".swiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

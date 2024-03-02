@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body {
+            background: #333;
+        }
+
+        .familySite {
+            position: relative;
+            max-width: 195px;
+            margin: 25px auto 0px;
+        }
+
+        .familySite>a {
+            display: block;
+            width: 195px;
+            line-height: 40px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-indent: 20px;
+            box-sizing: border-box;
+        }
+
+        .familySite>.family {
+            position: inherit;
+            width: 100%;
+            display: none;
+        }
+
+        .familySite>.family>.familyActive {
+            display: block;
+        }
+
+        .familySite li {
+            background: #333;
+            border: 1px solid #fff;
+        }
+
+        .familySite li>a {
+            color: white;
+            line-height: 40px;
+            text-indent: 20px;
+            padding-left: 20px;
+        }
+
+        .familySite>a:hover,
+        .familySite li:hover>a {
+            opacity: .7;
+        }
+
+        .familySite>a::after {
+            content: "";
+            border-top: 5px solid white;
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: absolute;
+            top: 18.5px;
+            right: 15px;
+        }
+
+
+
+        .familySite2 {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            max-width: 195px;
+            margin: 300px auto 0;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .familySite2 a {
+            color: #fff;
+        }
+
+        .familySite2>a {
+            display: block;
+            width: 195px;
+            line-height: 40px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-indent: 20px;
+            box-sizing: border-box;
+        }
+
+        .familySite2>.family2 {
+            position: absolute;
+            width: 100%;
+            display: none;
+            top: 0%;
+            transform: translateY(-100%);
+        }
+
+        .familySite2>.family2>.familyActive2 {
+            display: block;
+        }
+
+        .familySite2 li {
+            background: #333;
+            border: 1px solid #fff;
+        }
+
+        .familySite2 li>a {
+            color: white;
+            line-height: 40px;
+            text-indent: 20px;
+            padding-left: 20px;
+        }
+
+        .familySite2>a:hover,
+        .familySite2 li:hover>a {
+            opacity: .7;
+        }
+
+        .familySite2>a::after {
+            content: "";
+            border-top: 5px solid transparent;
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid white;
+            border-right: 5px solid transparent;
+            position: absolute;
+            top: 13.5px;
+            right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="familySite">
+        <a href="#void" title="패밀리 사이트">패밀리 사이트</a>
+        <ul class="family">
+            <li class="familysub"><a href="#void">북새통 상상캠퍼스</a></li>
+            <li class="familysub"><a href="#void">e상상캠퍼스</a></li>
+            <li class="familysub"><a href="#void">북새통 커뮤니티</a></li>
+        </ul>
+    </div>
+
+    <div class="familySite2">
+        <a href="#void" title="패밀리 사이트">패밀리 사이트</a>
+        <ul class="family2">
+            <li class="familysub2"><a href="#void">북새통 상상캠퍼스</a></li>
+            <li class="familysub2"><a href="#void">e상상캠퍼스</a></li>
+            <li class="familysub2"><a href="#void">북새통 커뮤니티</a></li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // footer 패밀리사이트 up and down
+            $('.familySite>a').click(function () {
+                $(this).toggleClass("familyActive")
+                    .parent()
+                    .siblings()
+                    .children("a").removeClass("familyActive");
+
+                $(this).next().slideToggle(300)
+                    .parent()
+                    .siblings()
+                    .children(".family").slideUp(300);
+            })
+
+            $('.familySite2>a').click(function () {
+                $(this).toggleClass("familyActive2")
+                    .parent()
+                    .siblings()
+                    .children("a").removeClass("familyActive2");
+
+                $(this).next().slideToggle(300)
+                    .parent()
+                    .siblings()
+                    .children(".family2").slideDown(300);
+            })
+        })
+    </script>
+</body>
+
+</html>

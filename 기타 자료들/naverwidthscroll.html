@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            width: 420px;
+        }
+
+        .box {
+            position: relative;
+            padding-top: 13px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-image: linear-gradient(to top, #fafbfd 80%, #fff 83%);
+        }
+
+        .box::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 12px;
+            right: 0;
+            left: 0;
+            background-color: #ebebeb;
+            height: 1px;
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        .list {
+            transform: translateX(0%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: .5s;
+        }
+
+        .item {
+            position: relative;
+            width: 105px;
+            min-width: 105px;
+        }
+
+        .item:not(:first-child)::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 18px;
+            left: -1px;
+            width: 1px;
+            height: 18px;
+            background-color: #ebebeb;
+        }
+
+        .link {
+            position: relative;
+            display: block;
+            padding: 16px 0 17px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .text {
+            display: block;
+            line-height: 22px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .number {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            min-width: 24px;
+            padding: 0 8px;
+            box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .16);
+            box-sizing: border-box;
+            transform: translateX(-50%);
+            border-radius: 1.2rem;
+            background-color: #03c75a;
+            font-size: 12px;
+            line-height: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .number::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            border: 1px solid rgba(0, 0, 0, .04);
+            border-radius: 13px;
+        }
+
+        .item:last-child {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 1px;
+            background-color: #fafbfb;
+            transform: translateX(400%);
+            text-align: right;
+        }
+
+        .item:last-child a {
+            border: 1px solid #ebebeb;
+            color: #404040;
+            display: inline-block;
+            margin: 10px 17px 11px 0;
+            padding: 0 15px 0 16px;
+            border-radius: 17px;
+            background-color: #fafbfb;
+            vertical-align: top;
+            font-size: 1.3rem;
+        }
+
+        .item:last-child a .text {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 32px;
+            font-weight: 500;
+        }
+
+        .item:last-child a .text::after {
+            content: "";
+            display: inline-block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+            background-size: 433px 412px;
+            background-position: -409px -162px;
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            margin: 9px 0 0 4px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="wrap">
+                <ul class="list" role="tablist">
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">메일</span>
+                            <span class="number">999+</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">카페</span>
+                            <span class="number">452</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">블로그</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">페이</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">MYBOX</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">포스트</span>
+                        </a>
+                    </li>
+                    <li class="item" role="presentation">
+                        <a href="#" class="link" role="tab" aria-selected="false">
+                            <span class="text">설정</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <style>
+                .btn {
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #dadcdf;
+                    background-color: #fff;
+                    z-index: 10;
+                    top: 20px;
+                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .06);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .btn::before {
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                    background-size: 433px 412px;
+                    background-position: -283px -193px;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 12px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+
+                .btn-prev {
+                    left: -20px;
+                    transform: rotate(180deg) translateY(50%);
+                    display: none;
+                }
+
+                .btn-next {
+                    position: absolute;
+                    right: -20px;
+                }
+            </style>
+            <button type="button" class="btn btn-prev">
+                <span class="blind">이전</span>
+            </button>
+            <button type="button" class="btn btn-next">
+                <span class="blind">다음</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.btn-next').addEventListener('click', function () {
+            document.querySelector('.list').style.transform = 'translateX(-100%)'
+            document.querySelector('.btn-next').style.display = 'none'
+            document.querySelector('.btn-prev').style.display = 'block'
+        })
+
+        document.querySelector('.btn-prev').addEventListener('click', function () {
+            document.querySelector('.list').style.transform = 'translateX(0%)'
+            document.querySelector('.btn-next').style.display = 'block'
+            document.querySelector('.btn-prev').style.display = 'none'
+        })
+    </script>
+</body>
+
+</html>

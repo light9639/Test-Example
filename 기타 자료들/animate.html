@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #0000FF;
+            display: inline-block;
+            position: absolute;
+            top: 10%;
+            color: #FFF;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">Click me</div>
+    <script>
+        window.addEventListener("load", function () {
+            var el = document.querySelector("#box");
+            el.onclick = function () {
+                this.animate([
+                    { left: "0%", transform: "rotate(0deg)" },
+                    { left: "50%", transform: "rotate(360deg)" }
+                ], {
+                    duration: 5000,
+                    fill: "forwards"
+                });
+            };
+        });
+    </script>
+</body>
+
+</html>

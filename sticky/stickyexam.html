@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .wrapper {}
+
+        .wrapper .content {
+            height: 10000px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .wrapper .content .sticky {
+            width: 200px;
+            height: 150px;
+            background: #000;
+            position: sticky;
+            top: 10px;
+            color: #fff;
+        }
+
+        .wrapper .content .side {
+            flex: 1;
+            background: pink;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="sticky">1</div>
+            <div class="side">2</div>
+        </div>
+    </div>
+</body>
+
+</html>

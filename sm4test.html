@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {}
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            background: #cccc;
+        }
+
+        .list .item {}
+
+        .list .item .title {
+            position: relative;
+            display: block;
+            background: #f00;
+            line-height: 50px;
+            color: #fff;
+            padding-left: 25px;
+            border-bottom: 1px solid #fff;
+        }
+
+        .list .item .title::after {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+        }
+
+        .list .item .title.on::after {
+            background: #000;
+        }
+
+        .list .item .sub {
+            display: none;
+        }
+
+        .list .item .sub .sub-item {
+            display: block;
+            line-height: 50px;
+            padding-left: 25px;
+        }
+
+        .list .item .sub .sub-item:not(:last-child) {
+            border-bottom: 1px solid #fff;
+        }
+
+        .list .item .sub .sub-item a {}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="list">
+            <li class="item">
+                <a href="#void" class="title">menu1</a>
+                <ul class="sub">
+                    <li class="sub-item"><a href="#void">menu1</a></li>
+                    <li class="sub-item"><a href="#void">menu2</a></li>
+                    <li class="sub-item"><a href="#void">menu3</a></li>
+                    <li class="sub-item"><a href="#void">menu4</a></li>
+                    <li class="sub-item"><a href="#void">menu5</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="#void" class="title">menu2</a>
+                <ul class="sub">
+                    <li class="sub-item"><a href="#void">nav1</a></li>
+                    <li class="sub-item"><a href="#void">nav2</a></li>
+                    <li class="sub-item"><a href="#void">nav3</a></li>
+                    <li class="sub-item"><a href="#void">nav4</a></li>
+                    <li class="sub-item"><a href="#void">nav5</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="#void" class="title">menu3</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $('.title').click(function (e) {
+            e.preventDefault();
+            if ($(this).hasClass('on')) {
+                $('.title').removeClass('on').siblings('.sub').slideUp()
+            } else {
+                $('.title').removeClass('on').siblings('.sub').slideUp();
+                $(this).addClass('on').siblings('.sub').slideDown();
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .header {
+            background: #ccc;
+            height: 95px;
+        }
+
+        .container {}
+
+        .container .box1 {
+            height: 10000px;
+        }
+
+        .container .sc-top {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            display: block;
+            width: 34px;
+            height: 34px;
+            margin-left: 600px;
+            z-index: 1000000;
+            opacity: 0;
+            transition: 0.75s;
+            cursor: pointer;
+        }
+
+        .container .sc-top.fixed {
+            bottom: 100px;
+            opacity: 1;
+        }
+
+        .footer {
+            background: #000;
+            color: #fff;
+            height: 95px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">header</header>
+        <main class="container">
+            <section class="box1">
+                111
+            </section>
+            <div class="sc-top">
+                <img src="https://light9639.github.io/Seoul-City/assets/images/btn_top.png" alt="상단으로 이동">
+            </div>
+        </main>
+        <footer class="footer">footer</footer>
+    </div>
+    <script>
+        // 스크롤 내리면 상단 이동 버튼 나오게
+        const Top = document.querySelector('.sc-top');
+
+        function stickMenu() {
+            let winYPos = window.pageYOffset;
+            let TopElePos = Top.offsetTop;
+
+            if (winYPos > TopElePos) {
+                Top.classList.add('fixed');
+            } else {
+                Top.classList.remove('fixed');
+            }
+        }
+
+        window.addEventListener('scroll', stickMenu);
+
+        // 버튼 클릭 시 맨 위로 이동
+        Top.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+    </script>
+</body>
+
+</html>

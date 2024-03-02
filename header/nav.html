@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            position: relative;
+            height: 50px;
+            background: #ccc;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #ccc;
+            transition: .3s;
+        }
+
+        header.on::after {
+            height: 90px;
+            transition: .3s;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .list .item {
+            flex: 1;
+        }
+
+        .list .item .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            background: #000;
+            height: 50px;
+            transition: .3s;
+        }
+
+        .list .item .title.on {
+            background: #fff;
+            transition: .3s;
+        }
+
+        .list .item .sub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 10;
+            transition: .3s;
+            gap: 25px;
+        }
+
+        .list .item .sub.on {
+            opacity: 1;
+            visibility: visible;
+            transition: .3s .1s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="list">
+            <li class="item">
+                <a href="" class="title">menu1</a>
+                <ul class="sub">
+                    <li><a href="">sdfdfdfdfdf1</a></li>
+                    <li><a href="">sdfdfdfdfdf2</a></li>
+                    <li><a href="">sdfdfdfdfdf3</a></li>
+                    <li><a href="">sdfdfdfdfdf4</a></li>
+                    <li><a href="">sdfdfdfdfdf5</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="" class="title">menu2</a>
+                <ul class="sub">
+                    <li><a href="">1dfsdsd341</a></li>
+                    <li><a href="">1dfsdsd342</a></li>
+                    <li><a href="">1dfsdsd343</a></li>
+                    <li><a href="">1dfsdsd344</a></li>
+                    <li><a href="">1dfsdsd345</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="" class="title">menu2</a>
+                <ul class="sub">
+                    <li><a href="">1212fdfds231</a></li>
+                    <li><a href="">1212fdfds232</a></li>
+                    <li><a href="">1212fdfds233</a></li>
+                    <li><a href="">1212fdfds234</a></li>
+                    <li><a href="">1212fdfds235</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <script>
+        $('.item').hover(function () {
+            $('header').addClass('on');
+            $(this).find('.title').addClass('on').siblings('.sub').addClass('on');
+        }, function () {
+            $('header').removeClass('on');
+            $('.title').removeClass('on').siblings('.sub').removeClass('on')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .blind {
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .container {
+            height: 20000px;
+        }
+
+        .btn-box {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        }
+
+        [class*='btn'] {
+            background: #000;
+            border: none;
+            display: flex;
+        }
+
+        .btn-bottom::before {
+            content: '';
+            height: 100%;
+            width: 1px;
+            background: rgb(255, 255, 255, 0.75);
+        }
+
+        [class*='btn'] svg {
+            width: 24px;
+            height: 24px;
+            padding: 8px;
+            cursor: pointer;
+            transition: .5s;
+            stroke: #fff;
+            stroke-width: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="btn-box">
+            <button type="button" class="btn-top">
+                <svg id="Top" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+                </svg>
+                <span class="blind">위로가기</span>
+            </button>
+            <button type="button" class="btn-bottom">
+                <svg id="Bottom" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+                <span class="blind">위로가기</span>
+            </button>
+        </div>
+    </main>
+    <script>
+        $(".btn-top").click(function () {
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+        $(".btn-bottom").click(function () {
+            $("html, body").animate({ scrollTop: document.body.scrollHeight }, '300'); //숫자는 속도
+            return false;
+        });
+
+    </script>
+</body>
+
+</html>

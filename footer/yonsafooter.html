@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+        .blind {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            clip: rect(0, 0, 0, 0);
+            overflow: hidden;
+        }
+
+        .inner {
+            position: relative;
+            margin: 0 auto;
+            max-width: 1140px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nanum Gothic', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 250px;
+            font-size: 14px;
+            color: #999;
+            background: #4d4d4d;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <h2 class="blind"></h2>
+        <style>
+            .foot-top {
+                padding: 17px 20px;
+                border-bottom: 1px solid #616366;
+            }
+
+            .foot-top .inner {}
+
+            .foot-top .list {
+                display: flex;
+            }
+
+            .foot-top .list .item.white a {
+                color: #fff;
+            }
+
+            .foot-top .list .item:first-child {
+                padding-right: 27px;
+            }
+
+            .foot-top .list .item:not(:first-child) {
+                background: url(https://www.yonsei.ac.kr/_res/sc/img/common/bg_footermenu.png) no-repeat 0 50%;
+                padding: 0 26px 0 27px;
+            }
+
+            .foot-top .list .item a {
+                color: #ccc;
+            }
+        </style>
+        <div class="foot-top">
+            <div class="inner">
+                <ul class="list">
+                    <li class="item"><a href="">채용공고</a></li>
+                    <li class="item"><a href="">입찰공고</a></li>
+                    <li class="item white"><a href="">대학정보공시</a></li>
+                    <li class="item"><a href="">정보공개</a></li>
+                    <li class="item white"><a href="">개인정보처리방침</a></li>
+                    <li class="item"><a href="">법적고지</a></li>
+                    <li class="item"><a href="">연세사회공헌</a></li>
+                    <li class="item"><a href="">윤리인권위원회</a></li>
+                    <li class="item"><a href="">사이트맵</a></li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .foot-bottom .inner {
+                display: flex;
+                padding: 29px 0 39px;
+            }
+
+            .foot-bottom .sns {
+                display: flex;
+            }
+
+            .foot-bottom .sns .item {}
+
+            .foot-bottom .sns .item:not(:last-child) {
+                margin-right: 25px;
+            }
+
+            .foot-bottom .sns .item a {
+                position: relative;
+            }
+
+            .foot-bottom .sns .item a::before {
+                content: '';
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .foot-bottom .sns .item a.youtube::before {
+                background-image: url(https://www.yonsei.ac.kr/_res/sc/img/common/foot-icon01.png);
+            }
+
+            .foot-bottom .sns .item a.instagram::before {
+                background-image: url(https://www.yonsei.ac.kr/_res/sc/img/common/foot-icon02.png);
+            }
+
+            .foot-bottom .sns .item a.facebook::before {
+                background-image: url(https://www.yonsei.ac.kr/_res/sc/img/common/foot-icon03.png);
+            }
+
+            .foot-bottom .sns .item a.blog::before {
+                background-image: url(https://www.yonsei.ac.kr/_res/sc/img/common/foot-icon04.png);
+            }
+
+            .foot-bottom .textbox {
+                margin-top: 20px;
+            }
+
+            .foot-bottom .textbox .text {}
+
+            .foot-bottom .textbox .text span {
+                display: inline-block;
+                margin-right: 15px;
+                line-height: 21px;
+                color: #fff;
+            }
+
+            .foot-bottom .textbox .text span a {
+                color: #fff;
+            }
+
+            .foot-bottom .textbox p {
+                color: #fff;
+            }
+        </style>
+        <div class="foot-bottom">
+            <div class="inner">
+                <div class="col-left">
+                    <ul class="sns">
+                        <li class="item">
+                            <a href="" class="youtube">
+                                <span class="blind">유튜브</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="instagram">
+                                <span class="blind">인스타그램</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="facebook">
+                                <span class="blind">페이스북</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="blog">
+                                <span class="blind">네이버 블로그</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="textbox">
+                        <p class="text">
+                            <span>신촌·국제/미래 : <a href="tel:1599-1885">1599-1885</a></span>
+                            <span>의료원 : <a href="tel:1599-1004">1599-1004</a></span>
+                            <span>03722 서울특별시 서대문구 연세로 50 연세대학교</span>
+                        </p>
+                        <p class="">COPYRIGHT© 2020 YONSEI UNIV. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+                <style>
+                    .col-right {
+                        margin-left: auto;
+                    }
+
+                    .certibox {
+                        display: flex;
+                    }
+
+                    .certibox .img-box {
+                        display: flex;
+                        gap: 10px;
+                    }
+
+                    .certibox .img-box img {
+                        height: 40px;
+                    }
+
+                    .certibox .img-box .wa {}
+
+                    .certibox .img-box .ismsp {}
+
+                    .certibox .text-box {
+                        display: inline-block;
+                        margin: 4px 0 0 5px;
+                        font-size: 10px;
+                        line-height: 1.3;
+                        color: #fff;
+                    }
+                </style>
+                <div class="col-right">
+                    <div class="certibox">
+                        <div class="img-box">
+                            <a href="" class="wa">
+                                <img src="https://www.yonsei.ac.kr/_res/test_sc/img/common/img_ismp.png" alt="wa">
+                            </a>
+                            <a href="" class="ismsp">
+                                <img src="https://www.yonsei.ac.kr/_res/sc/img/common/img_wa_2022.png" alt="ismsp">
+                            </a>
+                        </div>
+                        <div class="text-box">
+                            <p>[인증범위] 연세대학교 학부대상 학사정보서비스(신촌캠퍼스, 국제캠퍼스)</p>
+                            <p>[유효기간] 2023.11.01 ~ 2026.10.31</p>
+                        </div>
+                    </div>
+                    <style>
+                        .familybox {
+                            width: 149px;
+                            display: inline-block;
+                            position: absolute;
+                            right: 0;
+                            margin-top: 20px;
+                        }
+
+                        .familybox .site {
+                            display: block;
+                            padding: 6px 9px;
+                            color: #999;
+                            border: 1px solid #808080;
+                            background: url(https://www.yonsei.ac.kr/_res/sc/img/common/bg_familysite2.png) no-repeat 100% 8px;
+                        }
+
+                        .familybox .site.on {
+                            color: #fff;
+                            border-color: #003876;
+                            background-color: #003876;
+                            background-position: 100% -22px;
+                        }
+
+                        .familybox .sub {
+                            display: none;
+                            overflow: hidden;
+                            position: absolute;
+                            bottom: 31px;
+                            width: 129px;
+                            padding: 0 10px;
+                            background: #666;
+                            z-index: 10;
+                        }
+
+                        .familybox .sub.on {
+                            padding: 14px 10px 5px;
+                        }
+
+                        .familybox .sub li:not(:last-child) {
+                            margin-top: 3px;
+                        }
+
+                        .familybox .sub li a {
+                            display: inline-block;
+                            padding: 6px 0 6px 10px;
+                            font-size: 13px;
+                            background: url(https://www.yonsei.ac.kr/_res/sc/img/common/bg_familysite.png) no-repeat 0 -19px;
+                            color: #ccc;
+                        }
+
+                        .familybox .sub li a:hover {
+                            color: #fff;
+                            text-decoration: underline;
+                            background-position: 0 11px;
+                        }
+                    </style>
+                    <div class="familybox">
+                        <a href="" class="site">관련 사이트</a>
+                        <ul class="sub">
+                            <li class="item"><a href="">학교법인</a></li>
+                            <li class="item"><a href="">한국어학당</a></li>
+                            <li class="item"><a href="">외국어학당</a></li>
+                            <li class="item"><a href="">미래교육원</a></li>
+                            <li class="item"><a href="">연세의료원</a></li>
+                            <li class="item"><a href="">세브란스병원</a></li>
+                            <li class="item"><a href="">강남세브란스병원</a></li>
+                            <li class="item"><a href="">용인세브란스병원</a></li>
+                            <li class="item"><a href="">원주세브란스기독병원</a></li>
+                            <li class="item"><a href="">연세유업</a></li>
+                            <li class="item"><a href="">동문회관</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $('.familybox .site').click(function (e) {
+            e.preventDefault();
+            $(this).toggleClass('on')
+            $('.familybox .sub').slideToggle()
+        })
+    </script>
+</body>
+
+</html>

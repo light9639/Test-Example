@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .wrapper {
+            width: 492px;
+            padding: 0;
+            border: none;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .wrapper .tab-menu {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 29px;
+            border-bottom: 1px solid #e2e2e3;
+        }
+
+        .wrapper .tab-menu h2 {}
+
+        .wrapper .tab-menu .menu-list {
+            display: flex;
+        }
+
+        .wrapper .tab-menu .menu-list .menu-item {
+            display: block;
+            padding: 5px 9px 5px 10px;
+            font-size: 12px;
+            color: #6d6d6d;
+            letter-spacing: -1px;
+        }
+
+        .wrapper .tab-menu .menu-list .menu-item:not(:last-child) {
+            padding-left: 9px;
+            background: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_tabbg.gif) no-repeat 0 8px;
+        }
+
+        .wrapper .tab-menu .menu-list .menu-item a {
+            display: block;
+            font-size: 12px;
+            letter-spacing: -1px;
+            text-decoration: none;
+            color: #6d6d6d;
+        }
+
+        .wrapper .tab-menu .menu-list .menu-item.on a {
+            font-weight: bold;
+        }
+
+        .wrapper .tab-menu .menu-list .menu-item:not(:last-child) a {}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="tab-menu">
+            <h2>인기 TOP 10</h2>
+            <ul class="menu-list">
+                <li class="menu-item on" data-tab="total">
+                    <a href="#void">전체</a>
+                </li>
+                <li class="menu-item" data-tab="movie">
+                    <a href="#void">영화</a>
+                </li>
+                <li class="menu-item" data-tab="drama">
+                    <a href="#void">드라마</a>
+                </li>
+                <li class="menu-item" data-tab="broad">
+                    <a href="#void">방송</a>
+                </li>
+                <li class="menu-item" data-tab="anime">
+                    <a href="#void">애니</a>
+                </li>
+                <li class="menu-item" data-tab="game">
+                    <a href="#void">게임</a>
+                </li>
+                <li class="menu-item" data-tab="etc">
+                    <a href="#void">기타</a>
+                </li>
+            </ul>
+        </div>
+        <style>
+            .tab-con .list {
+                padding-top: 12px;
+                list-style: none;
+                display: none;
+            }
+
+            .tab-con .list.on {
+                display: block;
+            }
+
+            .tab-con .list li {
+                margin: 5px 0;
+                padding-left: 27px;
+                background-position: -1px 5px;
+                overflow: hidden;
+                vertical-align: top;
+                background-repeat: no-repeat;
+                zoom: 1;
+            }
+
+            .tab-con .list li.ls1 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num1.gif);
+            }
+
+            .tab-con .list li.ls2 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num2.gif);
+            }
+
+            .tab-con .list li.ls3 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num3.gif);
+            }
+
+            .tab-con .list li.ls4 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num4.gif);
+            }
+
+            .tab-con .list li.ls5 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num5.gif);
+            }
+
+            .tab-con .list li.ls6 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num6.gif);
+            }
+
+            .tab-con .list li.ls7 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num7.gif);
+            }
+
+            .tab-con .list li.ls8 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num8.gif);
+            }
+
+            .tab-con .list li.ls9 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num9.gif);
+            }
+
+            .tab-con .list li.ls10 {
+                background-image: url(https://image.ondisk.co.kr/images/main/new_20190903/popularity_top_icon_num10.gif);
+            }
+
+            .tab-con .list li a {
+                line-height: 21px;
+                overflow: hidden;
+                float: left;
+                width: 315px;
+                margin-right: 12px;
+                font-size: 13px;
+                color: #575757;
+                text-decoration: none;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .tab-con .list li a:hover {
+                text-decoration: underline;
+            }
+
+            .tab-con .list li span.size {
+                width: 55px;
+                font-size: 12px;
+                color: #a7a9aa;
+                text-align: right;
+            }
+
+            .tab-con .list li span.category {
+                overflow: hidden;
+                padding-left: 10px;
+                text-decoration: none;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 65px;
+                font-size: 12px;
+                color: #a7a9aa;
+                text-align: right;
+            }
+        </style>
+        <div class="tab-con">
+            <ol class="list total on" data-type="total">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls6">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102115012','0')"
+                        title="[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질 BluRay5.1">[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질
+                        BluRay5.1</a>
+                    <span class="size">3.8G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls7">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102033928','0')"
+                        title="SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막">SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls8">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102014811','0')"
+                        title="12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막">12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막</a>
+                    <span class="size">3.3G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls9">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102167176','0')"
+                        title="1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질">1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질</a>
+                    <span class="size">3.5G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls10">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('94386767','0')" title="[한국영화] 한산 리덕스">[한국영화] 한산
+                        리덕스</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list movie" data-type="movie">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls6">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102115012','0')"
+                        title="[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질 BluRay5.1">[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질
+                        BluRay5.1</a>
+                    <span class="size">3.8G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls7">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102033928','0')"
+                        title="SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막">SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls8">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102014811','0')"
+                        title="12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막">12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막</a>
+                    <span class="size">3.3G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls9">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102167176','0')"
+                        title="1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질">1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질</a>
+                    <span class="size">3.5G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list drama" data-type="drama">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls6">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102115012','0')"
+                        title="[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질 BluRay5.1">[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질
+                        BluRay5.1</a>
+                    <span class="size">3.8G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls7">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102033928','0')"
+                        title="SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막">SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list broad" data-type="broad">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list anime" data-type="anime">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls6">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102115012','0')"
+                        title="[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질 BluRay5.1">[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질
+                        BluRay5.1</a>
+                    <span class="size">3.8G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls7">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102033928','0')"
+                        title="SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막">SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls8">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102014811','0')"
+                        title="12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막">12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막</a>
+                    <span class="size">3.3G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list game" data-type="game">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls5">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102151211','0')"
+                        title="01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P 초고화질">01월 많은상을수상한 스릴러 (( 비 행 기 재 난 )) 1080P
+                        초고화질</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls6">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102115012','0')"
+                        title="[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질 BluRay5.1">[NEW] 2024 신년 대작 (( 청, 괘 )) 공식자막 초고화질
+                        BluRay5.1</a>
+                    <span class="size">3.8G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls7">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102033928','0')"
+                        title="SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막">SF액션-[ 쥬 랴 ㄱl 도 ㅁl ㄴl 언 ]-초고화질 완자막</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls8">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102014811','0')"
+                        title="12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막">12.떠따.최강대작.DC((ㅡ아쿠아맨2 ㅡ)) 현존최고.한글자막</a>
+                    <span class="size">3.3G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls9">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102167176','0')"
+                        title="1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질">1월 천女유혼 리메이크가 떴다 - [ 기우천연 ] - 완벽자막 초고화질</a>
+                    <span class="size">3.5G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+            <ol class="list etc" data-type="etc">
+                <li class="ls1">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102135451','0')"
+                        title="O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay">O1월 최신 떳다잉 (( 버려진 인간들 )) 섬뜩한사린 초고화질BluRay</a>
+                    <span class="size">3.0G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls2">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102189009','0')"
+                        title="O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막">O1. 박스1위 흥행대작 (( 괴 . 물 )) 1O8OP 초고화질 정식자막</a>
+                    <span class="size">3.4G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls3">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102158779','0')"
+                        title="1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막">1월 슈ㅍㅓ 스파이 잭 리처 시즌2 E06.240104.1080P 공식자막</a>
+                    <span class="size">2.1G</span>
+                    <span class="category">영화</span>
+                </li>
+                <li class="ls4">
+                    <a href="javascript:void(0);" onclick="winBbsInfo('102154989','0')"
+                        title="1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막">1월 양자경 액션 ((-- 삼 . 합 . 회 --)) 1O8OP 공식자막</a>
+                    <span class="size">3.9G</span>
+                    <span class="category">영화</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        // tab메뉴를 class 명을 이용하여 바꾸는 법
+        $('.tab-menu .menu-item').hover(function () {
+            tabData = $(this).data('tab');
+            $(this).addClass('on').siblings().removeClass('on')
+            $("." + tabData).addClass('on').siblings().removeClass('on')
+        })
+
+        // tab메뉴를 data-type을 이용하여 바꾸는 법
+        /* $('.tab-menu .menu-item').hover(function () {
+                tabData = $(this).data('tab');
+                $(this).addClass('on').siblings().removeClass('on')
+                $(`.tab-con [data-type=${tabData}]`).addClass('on').siblings().removeClass('on')
+        }) */
+    </script>
+
+</body>
+
+</html>

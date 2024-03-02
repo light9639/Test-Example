@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body {
+            height: 10000px;
+        }
+
+        header {
+            position: relative;
+        }
+
+        header.blue {
+            background: #000;
+        }
+
+        header.on {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        header.on .header-top {
+            display: none;
+        }
+
+        header.on .header-bottom {
+            background: #3f63bf;
+            color: #fff;
+        }
+
+        header.dark .header-bottom {
+            background: #000;
+        }
+
+        .inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .header-top {
+            background: #3f63bf;
+        }
+
+        .header-top .inner {}
+
+        .header-top .inner .left {
+            display: flex;
+        }
+
+        .header-top .inner .left .logo {}
+
+        .header-top .inner .left .list {
+            display: flex;
+        }
+
+        .header-top .inner .left .list .item:not(:first-child)::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 17px;
+            background-position: -82px -61px;
+            vertical-align: top;
+            margin-top: 18px;
+            background-image: url(https://ssl.pstatic.net/static.news/image/news/2022/11/08/sp_retina.png);
+            background-size: 164px 115px;
+            background-repeat: no-repeat;
+        }
+
+        .header-bottom {
+            position: relative;
+        }
+
+        .header-bottom::before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background-color: #e5e5e5;
+        }
+
+        .header-bottom .inner {}
+
+        .header-bottom .inner .list {
+            display: flex;
+            align-items: center;
+            height: 46px;
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .header-bottom .inner .list .item {}
+
+        .header-bottom .inner .list .item a {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            margin: 0 7px;
+            padding: 0 3px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="inner">
+                <div class="left">
+                    <h1 class="logo">
+                        <a href="#">
+                            <span class="blind">네이버 로고</span>
+                        </a>
+                    </h1>
+                    <a href="#" class="logo-text">
+                        <span class="blind">뉴스</span>
+                    </a>
+                    <ul class="list">
+                        <li class="item"><a href="#">연예</a></li>
+                        <li class="item"><a href="#">스포츠</a></li>
+                        <li class="item"><a href="#">날씨</a></li>
+                        <li class="item"><a href="#">프리미엄</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="inner">
+                <ul class="list">
+                    <li class="item"><a href="#void">언론사별</a></li>
+                    <li class="item"><a href="#void">정치</a></li>
+                    <li class="item"><a href="#void">경제</a></li>
+                    <li class="item"><a href="#void">사회</a></li>
+                    <li class="item"><a href="#void">생활/문화</a></li>
+                    <li class="item"><a href="#void">IT/과학</a></li>
+                    <li class="item"><a href="#void">세계</a></li>
+                    <li class="item"><a href="#void">랭킹</a></li>
+                    <li class="item"><a href="#void">신문보기</a></li>
+                    <li class="item"><a href="#void">오피니언</a></li>
+                    <li class="item"><a href="#void">TV</a></li>
+                    <li class="item"><a href="#void">팩트체크</a></li>
+                    <li class="item"><a href="#void">알고리즘 안내</a></li>
+                    <li class="item"><a href="#void">정정보도 모음</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <style>
+        .container {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .container .box {
+            width: 500px;
+            height: 500px;
+            border: 5px solid #3f63bf;
+        }
+    </style>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box box3">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <script>
+        let lastScroll = 0;
+        let bodyTop = $('body').scrollTop();
+
+        $(window).scroll(function () {
+            curr = $(this).scrollTop();
+            target = $('.box3').offset().top;
+
+            if (curr > bodyTop) {
+                $('header').addClass('on')
+                if (curr >= target) {
+                    $('header').addClass('dark')
+                } else {
+                    $('header').removeClass('dark')
+                }
+            } else {
+                $('header').removeClass('on')
+            }
+        })
+    </script>
+</body>
+
+</html>

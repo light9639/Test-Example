@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .input-group {
+            width: 520px;
+            border: 2px solid #e32836;
+            border-radius: 25px;
+            margin-left: 100px;
+            position: absolute;
+            background: #fff;
+            z-index: 2;
+        }
+
+        .top-area {
+            display: flex;
+        }
+
+        .input-group .comic-wrap {
+            width: 85px;
+            left: 0;
+            margin-left: 20px;
+        }
+
+        .input-group .comic-wrap .btn {
+            width: 100%;
+            padding-left: 5px;
+            background: url('https://www.yesfile.com/img/main/select_arrow.png') no-repeat 70px center;
+            text-align: left;
+            height: 46px;
+            line-height: 13px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .input-group .comic-wrap .list {
+            display: none;
+            position: absolute;
+            top: 53px;
+            left: -2px;
+            width: 107px;
+            border: 2px solid #e32836;
+            border-radius: 25px 0 25px 25px;
+            background: #fff;
+            z-index: 9;
+            padding: 15px 0 15px 20px;
+        }
+
+        .input-group .comic-wrap .list .item {
+            font-size: 13px;
+            cursor: pointer;
+            line-height: 19px;
+        }
+
+        .input-group .comic-wrap .list .item a {
+            color: #7b7b7b;
+        }
+    </style>
+    <div class="input-group">
+        <div class="top-area">
+            <div class="comic-wrap">
+                <button type="button" class="btn">만화</button>
+                <ul class="list">
+                    <li class="item"><a href="#void">menu1</a></li>
+                    <li class="item"><a href="#void">menu2</a></li>
+                    <li class="item"><a href="#void">menu3</a></li>
+                    <li class="item"><a href="#void">menu4</a></li>
+                    <li class="item"><a href="#void">menu5</a></li>
+                    <li class="item"><a href="#void">menu6</a></li>
+                    <li class="item"><a href="#void">menu7</a></li>
+                    <li class="item"><a href="#void">menu8</a></li>
+                    <li class="item"><a href="#void">menu9</a></li>
+                </ul>
+            </div>
+            <style>
+                .input-group .total-wrap {
+                    width: 95px;
+                    left: 200px;
+                }
+
+                .input-group .total-wrap .btn {
+                    width: 100%;
+                    padding-left: 10px;
+                    background: url('https://www.yesfile.com/img/main/select_arrow.png') no-repeat 80px center;
+                    text-align: left;
+                    height: 46px;
+                    line-height: 13px;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+
+                .input-group .total-wrap .list {
+                    display: none;
+                    position: absolute;
+                    top: 53px;
+                    left: 105px;
+                    width: 95px;
+                    border: 2px solid #e32836;
+                    border-radius: 0 25px 25px 25px;
+                    background: #fff;
+                    z-index: 9;
+                    padding: 15px 0 15px 20px;
+                }
+
+                .input-group .total-wrap .list .item {
+                    font-size: 13px;
+                    cursor: pointer;
+                    line-height: 19px;
+                }
+
+                .input-group .total-wrap .list .item a {
+                    color: #353535;
+                }
+            </style>
+            <div class="total-wrap">
+                <button type="button" class="btn">통합검색</button>
+                <ul class="list">
+                    <li class="item"><a href="#void">menu1</a></li>
+                    <li class="item"><a href="#void">menu2</a></li>
+                    <li class="item"><a href="#void">menu3</a></li>
+                    <li class="item"><a href="#void">menu4</a></li>
+                    <li class="item"><a href="#void">menu5</a></li>
+                    <li class="item"><a href="#void">menu6</a></li>
+                    <li class="item"><a href="#void">menu7</a></li>
+                    <li class="item"><a href="#void">menu8</a></li>
+                    <li class="item"><a href="#void">menu9</a></li>
+                </ul>
+            </div>
+            <style>
+                .srch-text {
+                    height: 46px;
+                    width: 262px;
+                }
+
+                .srch-text #s-value {
+                    width: 262px;
+                    height: 46px;
+                    position: absolute;
+                    top: 0;
+                    padding-left: 10px;
+                    border: none;
+                    font-size: 13px;
+                }
+
+                .srch-text .srch-box-btn {
+                    height: 46px;
+                    width: 15px;
+                    background: url('https://www.yesfile.com/img/main/select_arrow.png') no-repeat center center;
+                    position: absolute;
+                    right: 60px;
+                    top: 0;
+                    text-align: left;
+                    line-height: 13px;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+
+                .srch-text .srch-btn {
+                    width: 25px;
+                    height: 25px;
+                    background: url('https://www.yesfile.com/img/main/srch_icon.png') no-repeat;
+                    position: absolute;
+                    right: 20px;
+                    top: 10px;
+                    text-align: left;
+                    line-height: 13px;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+            </style>
+            <div class="srch-text">
+                <input id="s-value" type="text" autocomplete="off">
+                <button class="srch-box-btn">
+                    <span class="blind">하단 열고 닫기</span>
+                </button>
+                <button class="srch-btn">
+                    <span class="blind">검색</span>
+                </button>
+            </div>
+        </div>
+        <style>
+            .bottom-group {
+                display: none;
+                width: 100%;
+                border-top: 1px solid #d1d1d1;
+            }
+
+            .bottom-group .tab-menu {
+                width: 100%;
+                border-bottom: 2px solid #e7e7e7;
+            }
+
+            .bottom-group .tab-menu div {
+                width: 50%;
+                float: left;
+                text-align: center;
+                position: relative;
+                bottom: -2px;
+                font-size: 13px;
+                color: #353535;
+                padding: 13px 0 15px;
+                line-height: 13px;
+                cursor: pointer;
+            }
+
+            .bottom-group .tab-menu div.on {
+                border-bottom: 2px solid #e32836;
+                color: #ee3d59;
+            }
+
+            .bottom-group .tab-con {
+                text-align: center;
+                height: 105px;
+                padding: 15px;
+                margin: 50px 0 30px;
+            }
+
+            .bottom-group .tab-con p {
+                margin-top: 15px;
+                font-size: 13px;
+                line-height: 20px;
+                color: #7b7b7b;
+                display: none;
+            }
+
+            .bottom-group .tab-con p.on {
+                display: block;
+            }
+
+            .bottom-group .bottom-menu {
+                width: 100%;
+                padding: 15px 20px;
+                border-top: 1px solid #d1d1d1;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .bottom-group .bottom-menu button {
+                font-size: 12px;
+                line-height: 12px;
+            }
+
+            .bottom-group .bottom-menu .delete {
+                color: #000000;
+                float: left;
+                cursor: pointer;
+            }
+
+            .bottom-group .bottom-menu .btn-area {
+                text-align: right;
+            }
+
+            .bottom-group .bottom-menu .btn-area button:not(:last-child)::after {
+                width: 1px;
+                height: 10px;
+                background: #575757;
+                position: absolute;
+                right: -11px;
+                top: 1px;
+                content: '';
+            }
+
+            .bottom-group .bottom-menu .btn-area .autoOff {
+                color: #575757;
+                margin-right: 20px;
+                position: relative;
+            }
+
+            .bottom-group .bottom-menu .btn-area .saveOn {
+                color: #575757;
+                margin-right: 20px;
+                position: relative;
+                font-size: 12px;
+                line-height: 12px;
+            }
+
+            .bottom-group .bottom-menu .btn-area .close {
+                color: #ee3d59;
+                margin-right: 0;
+                font-size: 12px;
+                line-height: 12px;
+            }
+        </style>
+        <div class="bottom-group">
+            <div class="tab-menu">
+                <div class="on" data-tab="#tab1">최근 검색어</div>
+                <div class="" data-tab="#tab2">내 검색어</div>
+            </div>
+            <div class="tab-con">
+                <p class="on" id="tab1">최근 검색어가 없습니다.</p>
+                <p id="tab2">설정된 내 검색어가 없습니다.<br>
+                    최근 검색어에서 자주 찾는 검색어를 선택하여 자주 찾는 검색어를<br>
+                    내 검색어로 저장해 보세요.</p>
+            </div>
+            <div class="bottom-menu">
+                <button type="button" class="delete">전체삭제</button>
+                <div class="btn-area">
+                    <button type="button" class="autoOff">자동완성 끄기</button>
+                    <button type="button" class="saveOn">검색어 저장 켜기</button>
+                    <button type="button" class="close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.comic-wrap .btn').click(function () {
+            $('.comic-wrap .list').slideToggle();
+        })
+        $('.total-wrap .btn').click(function () {
+            $('.total-wrap .list').slideToggle();
+        })
+        $('.srch-box-btn').click(function () {
+            $('.bottom-group').slideToggle();
+        })
+        $('.bottom-group .tab-menu div').click(function () {
+            tabName = $(this).data('tab');
+            $(this).addClass('on').siblings().removeClass('on')
+            $(tabName).addClass('on').siblings().removeClass('on')
+        })
+    </script>
+</body>
+
+</html>

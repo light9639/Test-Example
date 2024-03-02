@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        @charset "UTF-8";
+
+        button {
+            padding: 0;
+            border: 0;
+            cursor: pointer;
+            font-family: inherit;
+            background: none;
+        }
+
+        .btn__close {
+            position: relative;
+            width: 36px;
+            height: 30px;
+        }
+
+        .btn__close::before,
+        .btn__close::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .btn__close::before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .btn__close::after {
+            transform: translateY(-50%) rotate(135deg);
+        }
+
+        .popup-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.7);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+        }
+
+        .popup-wrap .inner {
+            padding: 0 50px 40px;
+            overflow: hidden;
+        }
+
+        .popup-wrap .inner .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        /* 스와이퍼 커스텀 */
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #e4e4e4;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background: none;
+        }
+
+        .swiper-button-next::before,
+        .swiper-button-next::after,
+        .swiper-button-prev::before,
+        .swiper-button-prev::after {
+            content: "";
+            display: block;
+            width: 34px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .swiper-button-next::before,
+        .swiper-button-prev::before {
+            transform: translateY(12px) rotate(45deg);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            transform: translateY(34px) rotate(-45deg);
+        }
+
+        .swiper-button-next {
+            right: -70px;
+        }
+
+        .swiper-button-prev {
+            left: -70px;
+            transform: rotate(180deg);
+        }
+
+        /* 메인 슬라이더 & 썸네일 */
+        .slider-wrap {
+            height: 660px;
+            margin: 0 auto;
+        }
+
+        .slider-wrap .swiper-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .slider-wrap .swiper-container.slider {
+            /* 메인 슬라이더 */
+            height: 492px;
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-slide img {
+            cursor: pointer;
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-next,
+        .slider-wrap .swiper-container.slider .swiper-button-prev {
+            width: 30px;
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-next::before,
+        .slider-wrap .swiper-container.slider .swiper-button-next::after,
+        .slider-wrap .swiper-container.slider .swiper-button-prev::before,
+        .slider-wrap .swiper-container.slider .swiper-button-prev::after {
+            width: 26px;
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-next::before,
+        .slider-wrap .swiper-container.slider .swiper-button-prev::before {
+            transform: translateY(14px) rotate(45deg);
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-next::after,
+        .slider-wrap .swiper-container.slider .swiper-button-prev::after {
+            transform: translateY(30px) rotate(-45deg);
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-next {
+            right: 0;
+        }
+
+        .slider-wrap .swiper-container.slider .swiper-button-prev {
+            left: 0;
+        }
+
+        .slider-wrap .swiper-container.slider-thumbnail {
+            /* 썸네일 슬라이더  */
+            height: 160px;
+            margin-top: 4px;
+        }
+
+        .slider-wrap .swiper-container.slider-thumbnail .swiper-slide {
+            opacity: 0.5;
+            overflow: hidden;
+        }
+
+        .slider-wrap .swiper-container.slider-thumbnail .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        /* 팝업 슬라이더 */
+        .popup-wrap {
+            visibility: hidden;
+        }
+
+        .popup-wrap .slider-popup {
+            overflow: visible;
+            width: 370px;
+        }
+
+        .popup-wrap .slider-popup .swiper-slide {
+            border: 0;
+        }
+
+        .popup-wrap .slider-popup .swiper-slide img {
+            border: 5px solid #fff;
+            box-sizing: border-box;
+        }
+
+        .popup-wrap .slider-popup .swiper-pagination {
+            bottom: -36px;
+        }
+
+        .popup-wrap .slider-popup .swiper-pagination-bullet {
+            opacity: 1;
+            background: #7f7f7f;
+        }
+
+        .popup-wrap .slider-popup .swiper-pagination-bullet-active {
+            background: #fff;
+        }
+
+        .swiper-button-next.swiper-button-disabled,
+        .swiper-button-prev.swiper-button-disabled {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-wrap">
+        <div class="case1">
+            <div class="slider-wrap">
+                <!-- 메인 사진 슬라이더 -->
+                <div class="swiper-container slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1648737119247-e93f56878edf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1261&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1650491020292-d583fc858a93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1650493102762-196d4d2fed97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                alt=""></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <!-- 썸네일 사진 -->
+                <div class="swiper-container slider-thumbnail">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1648737119247-e93f56878edf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1261&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1650491020292-d583fc858a93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80g"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://images.unsplash.com/photo-1650493102762-196d4d2fed97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                alt=""></div>
+                        <div class="swiper-slide"><img
+                                src="https://members.duo.co.kr/member_profile/img/img_profile_default_m.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="popup-wrap">
+                <div class="inner">
+                    <div class="top">
+                        <p>사진보기</p>
+                        <button class="btn__close popup_close"></button>
+                    </div>
+                    <!-- 팝업 슬라이더 -->
+                    <div class="swiper-container slider-popup">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img
+                                    src="https://images.unsplash.com/photo-1648737119247-e93f56878edf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                                    alt=""></div>
+                            <div class="swiper-slide"><img
+                                    src="https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1261&q=80"
+                                    alt=""></div>
+                            <div class="swiper-slide"><img
+                                    src="https://images.unsplash.com/photo-1650491020292-d583fc858a93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                    alt=""></div>
+                            <div class="swiper-slide"><img
+                                    src="https://images.unsplash.com/photo-1650493102762-196d4d2fed97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                    alt=""></div>
+                        </div>
+                        <!-- 네비게이션 버튼 -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- 페이지네이션 불릿 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // 썸네일 슬라이더
+            var sliderThumbnail = new Swiper(".slider-thumbnail", {
+                slidesPerView: 3,
+                spaceBetween: 4,
+                watchSlidesProgress: true
+                // centeredSlides: true,
+                // loop: true,
+            });
+
+            //메인 슬라이더
+            var slider = new Swiper(".slider", {
+                // loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                thumbs: {
+                    swiper: sliderThumbnail
+                }
+            });
+
+            // 팝업 슬라이더
+            var sliderPopup = new Swiper(".slider-popup", {
+                autoHeight: true,
+                spaceBetween: 60,
+                // loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                }
+            });
+
+            // 메인 슬라이더, 팝업 슬라이더 연결
+            slider.controller.control = sliderPopup;
+            sliderPopup.controller.control = slider;
+            $(document).ready(function () {
+                // 사진보기 팝업 열기
+                $(".slider img").click(function () {
+                    $(".popup-wrap").css("visibility", "visible");
+                });
+
+                // 사진보기 팝업 닫기
+                $(".popup_close").click(function () {
+                    $(".popup-wrap").css("visibility", "hidden");
+                });
+            });
+
+        </script>
+</body>
+
+</html>

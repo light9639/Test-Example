@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .header {
+            background: #f00;
+            color: #fff;
+            height: 200px;
+        }
+
+        .container {
+            position: relative;
+            height: 10000px;
+        }
+
+        .container .box1 .btn-wrap {
+            position: fixed;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            right: 20px;
+            background-color: #e74e1d;
+            border-radius: 50%;
+            opacity: 0;
+            transition: background 0.2s ease-in-out,
+                opacity .5s,
+                bottom 0.5s;
+        }
+
+        .container .box1 .btn-wrap.no-fix {
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .container .box1 .btn-wrap.block {
+            opacity: 1;
+        }
+
+        .container .box1 .top-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .container .box1 .top-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .footer {
+            background: #000;
+            color: #fff;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        header
+    </header>
+    <main class="container">
+        <section class="box1">
+            <div class="btn-wrap">
+                <button class="top-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.433" height="26.035" viewBox="0 0 19.433 26.035">
+                        <g transform="translate(-1799.972 -8333.801)">
+                            <line x1="25.904" transform="translate(1809.695 8359.836) rotate(-90)" fill="none"
+                                stroke="#fff" stroke-miterlimit="10" stroke-width="1"></line>
+                            <path d="M0,0S1.646,10.023,11.137,9.635"
+                                transform="translate(1800.053 8344.958) rotate(-90)" fill="none" stroke="#fff"
+                                stroke-miterlimit="10" stroke-width="1"></path>
+                            <path d="M0,9.647S1.646-.376,11.137.011"
+                                transform="translate(1809.677 8344.958) rotate(-90)" fill="none" stroke="#fff"
+                                stroke-miterlimit="10" stroke-width="1"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        footer
+    </footer>
+    <script>
+        const topEl = document.querySelector('.btn-wrap .top-btn');
+
+        topEl.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+            return false;
+        })
+
+        /**
+        * 오른쪽 위로가기 버튼 나오게하기
+        */
+        ScrollTrigger.create({
+            trigger: '.container',
+            start: "0% 0%",
+            end: "100% 0%",
+            toggleClass: { targets: '.btn-wrap', className: 'block' }
+        })
+
+        /**
+         * 오른쪽 위로가기 버튼 고정시키기
+         */
+        ScrollTrigger.create({
+            trigger: '.footer',
+            start: "0% 100%",
+            end: "100% 0%",
+            toggleClass: { targets: '.btn-wrap', className: 'no-fix' }
+        })
+    </script>
+</body>
+
+</html>

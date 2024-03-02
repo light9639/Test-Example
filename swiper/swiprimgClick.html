@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .wrapper {
+            width: 540px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .swiper-container1 {
+            width: 100%;
+        }
+
+        .swiper-container1 .swiper-wrapper {}
+
+        .swiper-container1 .swiper-slide {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .swiper-container2 {
+            margin-top: 10px;
+        }
+
+        .swiper-container2 .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .swiper-container2 .swiper-slide {
+            cursor: pointer;
+        }
+
+        .swiper-container2 .swiper-slide.swiper-slide-thumb-active {
+            border: 2px solid #d40218;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper-container1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-container2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper(".swiper-container2", {
+            spaceBetween: 10,
+            slidesPerView: 'auto',
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".swiper-container1", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+        $('.swiper-container2 .swiper-slide').hover(function () {
+            console.log(111);
+            $(this).addClass('.swiper-slide-active').siblings().removeClass('.swiper-slide-active');
+            $(this).addClass('.swiper-slide-thumb-active').siblings().removeClass('.swiper-slide-thumb-active');
+        })
+    </script>
+</body>
+
+</html>

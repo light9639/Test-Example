@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        <strong>함께 볼만한 기자</strong>
+        <button type="button" class="icon">
+            <span class="blind">아이콘</span>
+        </button>
+        <div class="help">
+            <p class="help-desc">기사 추천은 24시간 내 50회까지 참여할 수 있습니다.</p>
+            <button class="help-close"><span class="blind">닫기</span></button>
+        </div>
+    </div>
+    <div class="tab-wrap">
+        <div class="tab-menu" data-tab="#tab1">비슷한 주제</div>
+        <div class="tab-menu" data-tab="#tab2">구독자 많음</div>
+    </div>
+    <script>
+        $('.tab-wrap .tab-menu').click(function () {
+            let tab = $(this).data('tab');
+            console.log(tab);
+            $(tab).addClass('on').siblings().removeClass('on');
+        })
+    </script>
+    <style>
+        .tab-con {}
+
+        .tab-con .tab {
+            display: none;
+        }
+
+        .tab-con .tab.on {
+            display: block;
+        }
+    </style>
+    <div class="tab-con">
+        <div id="tab1" class="tab on">
+            <ul class="list">
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/022/2024/01/03/3890879.jpg?type=nf190_130&amp;ut=1704246301000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/029/2024/01/03/2847052.jpg?type=nf190_130&ut=1704230168000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/018/2024/01/03/5648210.jpg?type=nf190_130&ut=1704246846000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="tab2" class="tab">
+            <ul class="list">
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/022/2024/01/02/3890658.jpg?type=nf190_130&ut=1704189851000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/053/2024/01/03/40561.jpg?type=nf190_130&ut=1704218464000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#void">
+                        <div class="top">
+                            <a href="#" class="subscribe-thumb">
+                                <img width="18" height="18" alt=""
+                                    src="https://imgnews.pstatic.net/image/upload/spubs/NNG0000022/profile/2022/05/15/profile_180119141.jpg?type=nf112_112">
+                            </a>
+                            <div class="subscribe-name">
+                                <a href="#">현화영 기자</a>
+                            </div>
+                            <div class="subscribe-wrap">구독</div>
+                        </div>
+                        <div class="content">
+                            <div class="rl_content">
+                                <p class="rl_txt">전여옥 “이재명 너무 혐오하지만, 흉기 폭력으로 응징해선 안 돼”</p>
+                                <span class="rl_press">세계일보</span>
+                                <div class="rl_time">1시간전</div>
+                            </div>
+                            <div class="rl-img">
+                                <div class="rl-border">
+                                    <img width="95" height="65" alt=""
+                                        src="https://mimgnews.pstatic.net/image/origin/214/2024/01/03/1322245.jpg?type=nf190_130&ut=1704236889000">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script></script>
+</body>
+
+</html>

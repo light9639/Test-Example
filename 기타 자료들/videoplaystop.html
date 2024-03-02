@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        video {
+            width: 1080px;
+        }
+
+        .button {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            border: 1px solid #ccc;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .button:hover {
+            background-color: #ccc;
+            color: #111;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <video id="banner-video00" playsinline="" muted="" autoplay="" loop="" data-vscid="ttvv0rrbv">
+            <source src="../images/video.mp4" type="video/mp4">
+        </video>
+        <span class="button">
+            멈추기
+        </span>
+    </div>
+    <script>
+        const video = document.querySelector('#banner-video00');
+        const button = document.querySelector('.button');
+
+        let number = 0;
+        button.addEventListener('click', () => {
+            number += 1;
+            if (number % 2 == 0) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        })
+
+    </script>
+</body>
+
+</html>

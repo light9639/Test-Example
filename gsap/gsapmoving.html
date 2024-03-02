@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 500px;
+            margin-top: 500px;
+        }
+
+        .container>* {
+            border: 5px solid #000;
+            height: 500px;
+            width: 500px;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="box box1" data-parallax-x="-550px" data-parallax-y="550px">1</section>
+        <section class="box box2" data-parallax-x="250px" data-parallax-y="250px">2</section>
+        <section class="box box3" data-parallax-x="250px" data-parallax-y="-250px">3</section>
+        <section class="box box4" data-parallax-x="-150px" data-parallax-y="150px">4</section>
+        <section class="box box5" data-parallax-x="250px" data-parallax-y="-250px">5</section>
+        <section class="box box6" data-parallax-x="250px" data-parallax-y="250px">6</section>
+        <section class="box box7" data-parallax-x="-350px" data-parallax-y="-350px">7</section>
+        <section class="box box8" data-parallax-x="250px" data-parallax-y="250px">8</section>
+        <section class="box box9" data-parallax-x="-150px" data-parallax-y="-150px">9</section>
+    </main>
+
+    <script>
+        gsap.utils.toArray('[data-parallax-x]').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,//객체기준범위
+                    start: "0% 100%",
+                    end: "100% 0%",
+                    scrub: 0,
+                    marker: true
+                },
+                x: element.dataset.parallaxX,
+                ease: 'none'
+            });
+        })
+
+        gsap.utils.toArray('[data-parallax-y]').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,//객체기준범위
+                    start: "0% 100%",
+                    end: "100% 0%",
+                    scrub: 0,
+                    marker: true
+                },
+                y: element.dataset.parallaxY,
+                ease: 'none'
+            });
+        })
+    </script>
+</body>
+
+</html>

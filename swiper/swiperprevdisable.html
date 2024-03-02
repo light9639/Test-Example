@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-section {
+            position: relative;
+        }
+
+        .swiper-container {
+            width: 90%;
+            padding-bottom: 20px;
+        }
+
+        .swiper-wrapper {
+            margin-top: 20px;
+        }
+
+        .swiper-slide {
+            width: 20%;
+            height: 200px;
+            box-shadow: 0 2px 10px 0px #848484;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .swiper-slide.slide01 {
+            background-color: #BE5EC2;
+        }
+
+        .swiper-slide.slide02 {
+            background-color: #F862A7;
+        }
+
+        .swiper-slide.slide03 {
+            background-color: #FF7B87;
+        }
+
+        .swiper-slide.slide04 {
+            background-color: #FFA26A;
+        }
+
+        .swiper-slide.slide05 {
+            background-color: #FFCE5E;
+        }
+
+        .swiper-slide.slide06 {
+            background-color: #F9F871;
+        }
+
+        .swiper-slide.slide07 {
+            background-color: #BE5EC2;
+        }
+
+        .swiper-slide.slide08 {
+            background-color: #F862A7;
+        }
+
+        .swiper-slide.slide09 {
+            background-color: #FF7B87;
+        }
+
+        .swiper-slide.slide10 {
+            background-color: #FFA26A;
+        }
+
+        .swiper-slide.slide11 {
+            background-color: #FFCE5E;
+        }
+
+        .swiper-slide.slide12 {
+            background-color: #F9F871;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="swiper-section">
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide01">
+                    <p>1</p>
+                </div>
+                <div class="swiper-slide slide02">
+                    <p>2</p>
+                </div>
+                <div class="swiper-slide slide03">
+                    <p>3</p>
+                </div>
+                <div class="swiper-slide slide04">
+                    <p>4</p>
+                </div>
+                <div class="swiper-slide slide05">
+                    <p>5</p>
+                </div>
+                <div class="swiper-slide slide06">
+                    <p>6</p>
+                </div>
+                <div class="swiper-slide slide07">
+                    <p>7</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-navigation">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <script>
+        let $swiperPrev = document.querySelector('.swiper-section .swiper-button-prev');
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 3,
+            slideToClickedSlide: true,
+            allowTouchMove: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                activeIndexChange: function () {
+                    if (this.realIndex == 0) {
+                        $swiperPrev.classList.add('swiper-button-disabled');
+                        startNum = false;
+                    } else {
+                        $swiperPrev.classList.remove('swiper-button-disabled');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .container .sc-rooms {
+            width: calc(100% - 140px);
+            margin: 0 auto;
+        }
+
+        .container .sc-rooms .swiper-pagination {
+            position: absolute;
+            top: 0;
+            bottom: auto;
+            left: 0px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 32px;
+            width: auto;
+            z-index: 10;
+        }
+
+        .container .sc-rooms .swiper-pagination .swiper-pagination-bullet {
+            display: block;
+            width: auto;
+            height: auto;
+            margin: 0;
+            font-size: 16px;
+            background: 0 0;
+            opacity: 1;
+            color: #a3a3a3;
+        }
+
+        .container .sc-rooms .swiper-pagination .swiper-pagination-bullet-active {
+            color: #000;
+        }
+
+        .container .sc-rooms .swiper {
+            position: relative;
+        }
+
+        .container .sc-rooms .swiper .swiper-wrapper {
+            position: relative;
+            padding-top: 43px;
+        }
+
+        .container .sc-rooms .swiper .swiper-slide.swiper-slide-active .textbox {
+            opacity: 1;
+            -webkit-transition: 0.5s 1s;
+            transition: 0.5s 1s;
+        }
+
+        .container .sc-rooms .swiper .img-wrap {
+            position: relative;
+            padding: 80px 0;
+            background: #f4f4f4;
+        }
+
+        .container .sc-rooms .swiper .img-wrap img {
+            width: auto;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .container .sc-rooms .swiper .textbox {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            max-width: 1300px;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            z-index: 10;
+            opacity: 0;
+        }
+
+        .container .sc-rooms .swiper .textbox .col-left {
+            position: absolute;
+            top: 337px;
+            left: 93.5px;
+            z-index: 5;
+        }
+
+        .container .sc-rooms .swiper .textbox .col-left .title {
+            margin-bottom: 40px;
+            font-family: FSSiena, sans-serif;
+            font-size: 64px;
+            font-weight: 300;
+        }
+
+        .container .sc-rooms .swiper .textbox .col-left .link-more {
+            display: inline-block;
+            text-align: center;
+            width: auto;
+            height: 62px;
+            min-width: 173px;
+            line-height: 62px;
+            padding: 0 30px;
+            border: 1px solid #000;
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+            background-color: transparent;
+            background-repeat: no-repeat;
+        }
+
+        .container .sc-rooms .swiper .textbox .col-right {
+            position: absolute;
+            max-width: 270px;
+            top: 372px;
+            right: 62px;
+            z-index: 5;
+        }
+
+        .container .sc-rooms .swiper .textbox .col-right .desc {
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .container .sc-rooms .swiper button {
+            position: absolute;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+            top: auto;
+            bottom: 115px;
+            width: auto;
+            height: auto;
+            min-width: 63px;
+            min-height: 28px;
+            background-image: url(../images/icoOnesidedarrow.svg);
+            background-repeat: no-repeat;
+            background-size: 63px 28px;
+        }
+
+        .container .sc-rooms .swiper button span {
+            display: block;
+            position: absolute;
+            bottom: -48px;
+            right: 0;
+            line-height: 28px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .container .sc-rooms .swiper button.btn-prev {
+            left: 33px;
+            right: auto;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+
+        .container .sc-rooms .swiper button.btn-prev span {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+
+        .container .sc-rooms .swiper button.btn-next {
+            right: 33px;
+            left: auto;
+        }
+
+        .container .sc-rooms .rightbtn {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="sc-rooms">
+            <div class="swiper">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_superior_twin.jpg"
+                                alt="메이플레이스 우수한 쌍둥이제품">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">SUPERIOR TWIN</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">심플함이 주는 안락한 분위기가<br> 여행, 쇼핑, 비즈니스 등 일정을 마친<br> 모두에게 여유로움을 제공합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_superior_double.jpg"
+                                alt="메이플레이스 우수한 제품 두개">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">SUPERIOR DOUBLE</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">모던함에 아늑한 우드인테리어를 더해<br> 머무시는 동안 긴장을 풀고<br> 온전한 자유로움을 선사합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_deluxe_twin.jpg"
+                                alt="메이플레이스 디럭스 트윈">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">DELUXE TWIN</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">전통과 문화, 감수성과 열정이 모인<br> 서울을 즐긴 후 맞이하는 공간을 통해<br> 여유로움 그 이상의 쉼과<br>
+                                    안락함을 제공합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_deluxe_triple.jpg"
+                                alt="메이플레이스 디럭스 트리플">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">DELUXE TRIPLE</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">더 많은 사람들이 보다 즐거운 시간과<br> 아늑한 휴식을 보낼 수 있도록<br> 넓고 편안한 3개의 베드가<br>
+                                    여유로움과 포근한 숙면을 선사</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_corner_suite.jpg"
+                                alt="메이플레이스 코너 수트">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">CORNER SUITE</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">여유로운 공간에서 편의에 따른 베드타입 변경이 가능한 서비스를 통해 보다 실용적이고 편안한 여행의 만족감을 느낄 수
+                                    있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-wrap">
+                            <img src="https://light9639.github.io/Mayplace/assets/images/rooms_thumimage_mayplace_suite.jpg"
+                                alt="메이플레이스 수트">
+                        </div>
+                        <div class="textbox">
+                            <div class="col-left">
+                                <h3 class="title">MAYPLACE SUITE</h3>
+                                <a href="#" class="link-more">자세히보기</a>
+                            </div>
+                            <div class="col-right">
+                                <p class="desc">최상층에 위치해 창경궁의 정원을 비롯해 도시의 전경을 조망할 수 있으며 수면과 휴식이 분리된 공간으로 구성되어 내 집 같은
+                                    편안함을 선사합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-prev">
+                    <span class="text"></span>
+                </button>
+                <button class="btn-next">
+                    <span class="text"></span>
+                </button>
+            </div>
+            <div class="rightbtn">
+                <a href="#" class="more-btn">VIEW MORE</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        let paginationList = ["SUPERIOR TWIN", "SUPERIOR DOUBLE", "DELUXE TWIN", "DELUXE TRIPLE", "CORNER SUITE", "MAYPLACESUITE"]
+        let prevButton = $('.sc-rooms .btn-prev');
+        let nextButton = $('.sc-rooms .btn-next');
+        let prevButtonText = prevButton.find('> .text');
+        let nextButtonText = nextButton.find('> .text');
+
+        roomsSwiper = new Swiper(".sc-rooms .swiper", {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            speed: 2000,
+            loop: true,
+            slidesPerView: 1,
+            pagination: {
+                el: ".sc-rooms .swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + paginationList[index] + "</span>";
+                },
+            },
+            navigation: {
+                nextEl: ".sc-rooms .btn-next",
+                prevEl: ".sc-rooms .btn-prev"
+            },
+            on: {
+                init: function (e) {
+                    prevButtonText.text(paginationList[this.slides.length - 1])
+                    nextButtonText.text(paginationList[e.realIndex + 1])
+                },
+                slideChange: function (e) {
+                    if (this.slides.length - 1 == this.realIndex) {
+                        prevButtonText.text(paginationList[e.realIndex - 1])
+                        nextButtonText.text(paginationList[0])
+                    } else if (this.realIndex == 0) {
+                        prevButtonText.text(paginationList[this.slides.length - 1])
+                        nextButtonText.text(paginationList[e.realIndex + 1])
+                    } else {
+                        prevButtonText.text(paginationList[e.realIndex - 1])
+                        nextButtonText.text(paginationList[e.realIndex + 1])
+                    }
+                },
+            },
+            allowTouchMove: false,
+        });
+    </script>
+</body>
+
+</html>

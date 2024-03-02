@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .swiper {
+            position: relative;
+        }
+
+        .blind {
+            position: absolute;
+            overflow: hidden;
+            margin: -1px;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .swiper .btn {
+            position: absolute;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 58px;
+            height: 59px;
+            transition: opacity .3s ease-in-out;
+            margin: 0 8px 0 0;
+            z-index: 100;
+            top: 50%;
+        }
+
+        .swiper .btn-prev {
+            left: 0px;
+            background: rgba(0, 0, 0, 0.3) url(https://www.ewha.ac.kr/_res/ewha/img/main/btn-main-vi-prev.png) no-repeat center center;
+        }
+
+        .swiper .btn-next {
+            background: rgba(0, 0, 0, 0.3) url(https://www.ewha.ac.kr/_res/ewha/img/main/btn-main-vi-next.png) no-repeat center center;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#void">
+                    <img src="https://www.ewha.ac.kr/_attach/image/2023/12/TZgaMKKSbKfYHzBumHbm.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#void">
+                    <img src="https://www.ewha.ac.kr/_attach/image/2023/11/HAZUwxYDovcwPBkKFOdh.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#void">
+                    <img src="https://www.ewha.ac.kr/_attach/image/2021/10/yeldnKgJYJwtQxcQFzLx.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#void">
+                    <img src="https://www.ewha.ac.kr/_attach/image/2023/08/FtFDCrqOtHucwVlOljYh.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <button class="btn btn-prev">
+            <span class="blind">이전</span>
+        </button>
+        <button class="btn btn-next">
+            <span class="blind">다음</span>
+        </button>
+        <style>
+            .swiper-pagination {
+                position: absolute !important;
+                bottom: 32px !important;
+                top: auto !important;
+            }
+
+            .swiper-pagination .swiper-pagination-bullet {
+                margin: 5px 3px;
+                width: 11px;
+                height: 11px;
+                background: none;
+                border: 1px solid #fff;
+                border-radius: 30px;
+            }
+
+            .swiper-pagination .swiper-pagination-bullet-active {
+                width: 23px;
+                background: #fff;
+            }
+
+            .carousel-stop {
+                left: 50%;
+                transform: translateX(150%);
+                z-index: 10;
+                position: absolute;
+                bottom: 32px;
+                margin: 0 0 0 26px;
+            }
+
+            .carousel-stop img {
+                display: none;
+            }
+
+            .carousel-stop img.on {
+                display: block;
+            }
+        </style>
+        <div class="swiper-pagination">
+        </div>
+        <div class="carousel-stop">
+            <a href="">
+                <img class="play on" src="https://www.ewha.ac.kr/_res/ewha/img/main/btn-pause-w.png" alt="정지">
+                <img class="pause" src="https://www.ewha.ac.kr/_res/ewha/img/main/btn-play-w.png" alt="재생">
+            </a>
+        </div>
+    </div>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            slideToClickedSlide: true,
+            autoplay: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: ".btn-next",
+                prevEl: ".btn-prev",
+            },
+        });
+
+        playImg = document.querySelector('.carousel-stop .play')
+        pauseImg = document.querySelector('.carousel-stop .pause')
+        document.querySelector('.carousel-stop').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (playImg.classList.contains('on')) {
+                playImg.classList.remove('on');
+                pauseImg.classList.add('on');
+                swiper.autoplay.stop();
+            } else {
+                playImg.classList.add('on');
+                pauseImg.classList.remove('on');
+                swiper.autoplay.start();
+            }
+        })
+    </script>
+</body>
+
+</html>

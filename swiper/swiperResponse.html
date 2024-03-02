@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-slide {
+            height: 300px;
+        }
+
+        .swiper-slide.s01 {
+            background: #DB1C5C;
+        }
+
+        .swiper-slide.s02 {
+            background: #B73280;
+        }
+
+        .swiper-slide.s03 {
+            background: #864690;
+        }
+
+        .swiper-slide.s04 {
+            background: #544F8B;
+        }
+
+        .swiper-slide.s05 {
+            background: #334F75;
+        }
+
+        .swiper-slide.s06 {
+            background: #2F4858;
+        }
+
+        .swiper-slide.s07 {
+            background: #008E44;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide s01"></div>
+            <div class="swiper-slide s02"></div>
+            <div class="swiper-slide s03"></div>
+            <div class="swiper-slide s04"></div>
+            <div class="swiper-slide s05"></div>
+            <div class="swiper-slide s06"></div>
+            <div class="swiper-slide s07"></div>
+        </div>
+    </div>
+    <script>
+        var ww = $(window).width();
+        var mySwiper = undefined;
+
+        function initSwiper() {
+
+            if (ww < 1280 && mySwiper == undefined) {
+                mySwiper = new Swiper(".swiper-container", {
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                    simulateTouch: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                });
+            } else if (ww >= 1280 && mySwiper != undefined) {
+                mySwiper.destroy();
+                mySwiper = undefined;
+            }
+        }
+
+        initSwiper();
+
+        $(window).on('resize', function () {
+            ww = $(window).width();
+            initSwiper();
+        });
+    </script>
+</body>
+
+</html>
